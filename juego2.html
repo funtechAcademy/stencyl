@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Arkanoid</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Arkanoid</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Arkanoid</h2>
+      <p class="texto">
+         El Arkanoid es un divertido que exige unos reflejos rápidos. Usa física, colisiones y efectos especiales para entretener al jugador. 
+      </p>
+
+      <h3>Objetos Necesarios</h3>
+      <h4>Paddle</h4>
+      <p class="texto">
+         Se moverá de izquierda a derecha y no podrá atravesar las paredes.
+      </p>
+      <h4>Ball</h4>
+      <p class="texto">
+         El Ball rebotará en el Paddle, los bloques y las tiles.
+      </p>
+      <h4>Green Block</h4>
+      <p class="texto">
+         Los Bloques que cambiarán de color y harán un sonido cuando la bola colisione con ellas. Y si le damos una segunda vez se eliminara el bloque y 
+         puntuara.
+      </p>
+
+      <h4>Escenarios</h4>
+      <p class="texto">
+         El Escenario tendrá 2 capas. La 0 sera donde dibujaremos el borde con la tiles y el Background que pondremos el fondo que tenemos en el juego.
+      </p>
+
+      <p class="nota">
+         Siempre tiene que estar la capa 0 en la primera posición empezando por arriba, ya que es donde dibujaremos y añadiremos nuestras Entidades.
+      </p>
+   
+      <h3>Paso A Paso</h3>
+      <p class="texto">
+         El juego consiste en que el Paddle se moverá con las flechas derecha e izquierda.
+         <br>
+         La pelota empezara a moverse cuando presionemos la tecla espacio e ira rebotando con el Paddle, Bloque y Tiles. Tendremos 3 pelotas disponibles
+         para poder jugar. Solo podra salir otra pelota cuando la anterior haya salido de la escena.
+         <br>
+         Los Bloques tendrán 2 vidas. La primera vez que le de la pelota cambiara de color y la segunda vez se eliminara el Bloque y puntuara.
+         <br>
+         El Juego terminara cuando ya no tengamos más vidas o cuando hallamos acabado con todos los bloques.
+      </p>
+
+     <h4>Escenario</h4>
+      <p class="texto">    
+         Creamos un Escenario con la anchura y altura que ponga por defecto.
+         <br>
+         Lo primero que necesitamos son las Tiles y el Fondo, asi que tendremos que añadir al proyecto dentro de Fondos y Set de baldosas.
+      </p>
+
+      <p class="texto">    
+         Para añadir el Fondo damos a Biblioteca/Fondos y damos al botón.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-1.png" width="15%" alt=""></p>
+
+     
+
+      <p class="texto">    
+      
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-.png" width="25%" alt=""></p>
+     
+
+      <p class="texto">    
+         
+      </p>
+       <p class="img_centrada"><img src="img/juego2/2-.png" width="25%" alt=""></p>
+     
+
+    
+      <h4>Noni</h4>
+      <p class="texto">    
+         
+         <p class="img_centrada"><img src="img/juego2/2-.png" width="30%" alt=""></p>
+      </p>
+      
+
+<!-- 
+      <p class="texto">    
+         Y el juego quedaría así.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-51.gif" width="50%" alt=""></p>
+      <p class="texto">
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/899419564/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/1-NosMovemos.sb3">aquí</a>.
+      </p>
+ -->
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
