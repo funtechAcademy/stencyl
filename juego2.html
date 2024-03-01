@@ -47,54 +47,185 @@
       </p>
 
       <p class="nota">
-         Siempre tiene que estar la capa 0 en la primera posición empezando por arriba, ya que es donde dibujaremos y añadiremos nuestras Entidades.
+         Siempre tiene que estar la capa 0 en la primera posición empezando por arriba, ya que es donde dibujaremos y añadiremos nuestras Entidades. Para 
+         poder hacerlo tiene que estar seleccionada la capa 0.
       </p>
    
       <h3>Paso A Paso</h3>
       <p class="texto">
-         El juego consiste en que el Paddle se moverá con las flechas derecha e izquierda.
+         El juego consiste en que el Paddle se moverá con las flechas derecha e izquierda sin que sobrepase los bordes.
          <br>
          La pelota empezara a moverse cuando presionemos la tecla espacio e ira rebotando con el Paddle, Bloque y Tiles. Tendremos 3 pelotas disponibles
          para poder jugar. Solo podra salir otra pelota cuando la anterior haya salido de la escena.
          <br>
          Los Bloques tendrán 2 vidas. La primera vez que le de la pelota cambiara de color y la segunda vez se eliminara el Bloque y puntuara.
          <br>
-         El Juego terminara cuando ya no tengamos más vidas o cuando hallamos acabado con todos los bloques.
+         El Juego terminara cuando ya no tengamos más vidas o cuando hallamos acabado con todos los bloques. Y pondremos una entidad de "Game Over" ó
+         "You Win".
       </p>
 
      <h4>Escenario</h4>
       <p class="texto">    
-         Creamos un Escenario con la anchura y altura que ponga por defecto.
-         <br>
-         Lo primero que necesitamos son las Tiles y el Fondo, asi que tendremos que añadir al proyecto dentro de Fondos y Set de baldosas.
+         Creamos un Escenario con la anchura y altura que ponga por defecto (El alumno la podra hacer más grande si quiere).
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-1.png" width="25%" alt=""></p>
+
+      <p class="texto">    
+         Lo primero que necesitamos son las Tiles y el Fondo (para poder ponerlas en el Escenario), asi que tendremos que añadir al proyecto dentro de
+         Fondos y Set de baldosas.
       </p>
 
       <p class="texto">    
          Para añadir el Fondo damos a Biblioteca/Fondos y damos al botón.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-1.png" width="15%" alt=""></p>
-
-     
+      <p class="img_centrada"><img src="img/juego2/2-2.png" width="15%" alt=""></p>
 
       <p class="texto">    
-      
+         Tenemos que dar al botón que aparece en la izquierda de "Pulsa para añadir un fotograma".
+         <br>
+         Escala 1 y seleccionar la imagen "New bricks.png" en el directorio donde esten los Sprites, Sonidos...
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-.png" width="25%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-3.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-4.png" width="0%" alt=""></p>
      
+      <p class="texto">    
+         Nos faltaria añadir el Set de baldosas damos a Biblioteca/Set de baldosas y damos al botón.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-5.png" width="15%" alt=""></p>
+      <p class="texto">    
+        Le ponemos un nombre.
+      <br>
+         Escala 1 y seleccionar la imagen "Bricks.png" en el directorio donde esten los Sprites, Sonidos...
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-6.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-7.png" width="50%" alt=""></p>
 
       <p class="texto">    
-         
+         Una vez que tengamos el Fondo y la Baldosas ya podemos crear nuestro Escenario. Y colocamos la entidad Paddle.
       </p>
-       <p class="img_centrada"><img src="img/juego2/2-.png" width="25%" alt=""></p>
-     
-
+       <p class="img_centrada"><img src="img/juego2/2-8.png" width="40%" alt=""></p>
     
-      <h4>Noni</h4>
+      <h4>Paddle</h4>
       <p class="texto">    
-         
-         <p class="img_centrada"><img src="img/juego2/2-.png" width="30%" alt=""></p>
+         Para crear una entidad daremos al botón, le ponemos un nombre y daremos al botón de crear.
       </p>
-      
+      <p class="img_centrada"><img src="img/juego2/2-9.png" width="15%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-10.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+        Nos aparece una ventana que nos dice que no tenemos animaciones, asi que le damos al botón central para añadir una animación. 
+        <br>
+        Pulsamos el botón para añadir un fotograma.
+        <br>
+        Escala 1 y seleccionar la imagen "Paddle.png". Le cambiamos el nombre de la animación (Siempre sin acentos).
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-11.png" width="15%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-12.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+        Ahora comenzaremos con la programación del Paddle.
+        <br>
+        Tendremos 2 Atributos del Juego (Globales), Vidas que será númerico y Juego Terminado que será un booleano (verdadero/falso).
+        <br><br>
+        Añadir un Evento Basics/When Updating para el movimiento.
+        <br>
+        - Si Vidas es 0 o Juego Terminado es verdadero ponemos el "x-speed" a 0 para que no se mueva.
+        <br>
+        - Y si Vidas es mayor que 0 hacemos que se mueva.
+        <br>
+        - Si le damos la tecla izquierda movemos x-speed en negativo.
+        <br>
+        - Si le damos la tecla derecha movemos x-speed en positivo.
+        <br>
+        - Y si no damos ni a la tecla derecha ni a la izquierda lo ponemos a 0 para que deje de moverse el Paddle.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-13.png" width="70%" alt=""></p>
+
+      <p class="nota">
+         A la hora de poner bloques si no queremos ese bloque podemos arrastrarlo a la basura que esta arriba a la derecha ó podemos dar click derecho
+         (aparecerán más opciones para hacer más cosas interesantes).
+        </p>
+
+      <p class="texto">    
+        Añadir otro Evento Basics/When Updating para que el Paddle no sobrepase los lados.
+        <br>
+        - Si la posición X del Paddle es menor a la anchura del tile igualo su X a la anchura de la tile.
+        <br>
+        - Y si la posición X + su anchura es mayor que anchura de la escena menos la anchura del tile igual su X a anchura de la escena menos
+         la anchura del tile.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-14.png" width="80%" alt=""></p>
+
+      <p class="texto">    
+        Pondremos su colisión.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-15.png" width="15%" alt=""></p>
+
+      <p class="texto">    
+        En la Fisica. No se puede empujar y no podrá rotar.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-16.png" width="40%" alt=""></p>
+
+      <p class="texto">     
+        Y pondremos que pertenezca al grupo de los Players. Que en Settings/Grupos de colisión los Players colisionaran con la "Tiles" y con un grupo que 
+        creemos que sera "Pelota" que lo añadiremos a nuestra ball.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-17.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-18.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+        Nos faltaria crear una Conducta que se llame "Lanzar Pelota". Para ello vamos Central del juego/Conductas y como la vamos añadir a una entidad,
+        la conducta será "Para entidades". Creamos la conducta y le ponemos su nombre.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-19.png" width="30%" alt=""></p>
+      <p class="nota">
+        Las conductas las podemos exportar para poder utilizarla en otro proyecto e incluso podemos tener "Atributos" para poder pasar valores como: tipo de 
+        entidades, ángulo....... En nuestro caso estas variables las tengo ocultas porque no las voy a necesitar.
+        <br>
+        Las podemos encontrar en la parte de la derecha de nuestra conducta. Paleta serán los bloques de programación, Atributos estarán los atributos que 
+        queremos pasar por parámetro. Y en Favoritos podemos tener bloques favoritos asignados.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-20.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-21.png" width="30%" alt=""></p>
+
+      <p class="texto">    
+         Una vez creada tenemos que añadir la Conducta "Lanzar Pelota" a la entidad "Paddle". Dentro de las Conductas del Paddle hay un botón que
+         aparece a la abajo a la izquierda. Le damos y nos aparece otra ventana para seleccionar la conducta.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-22.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-23.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-24.png" width="85%" alt=""></p>
+
+      <p class="texto">    
+        Ahora vamos a programar la conducta "Lanzar Pelota". Damos al botón de "Editar Conducta".
+        <br>
+        - La pelota se lanzara con el botón del Espacio. Para ello necesito crear en Setting/Controles una nueva tecla.
+        <br>
+        - Crear un nuevo evento Input/Universal/Keyboard y seleccionamos el botón nuevo que hemos creado.
+        <br>
+        - Usaremos el atributo Vidas para poder lanzar una nueva pelota y otro atributo Esperar que sera booleano que hasta que la pelota anterior no halla
+        desaparecido de la escena no pueda volver a lanzar otra pelota.
+        <br>
+        - Deje otro bloque pero no está enganchado para que si quieren podríamos hacer que tuvieramos varias pelotas a la vez.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-25.png" width="80%" alt=""></p>
+
+      <h4>Pelota</h4>
+      <p class="texto">    
+        
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-.png" width="15%" alt=""></p>
+
+      <p class="texto">    
+        
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-.png" width="15%" alt=""></p>
+
+
+
+
+
+
 
 <!-- 
       <p class="texto">    
