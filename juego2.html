@@ -105,22 +105,58 @@
       </p>
        <p class="img_centrada"><img src="img/juego2/2-8.png" width="40%" alt=""></p>
     
+       <p class="texto">    
+         Para poder crear los Bloques lo haremos desde el Evento "Created" del Escenario.
+         <br>
+         - Necesitamos varios Atributos (serán locales): Puntos, PosicionX, PosicionX Inicial, PosicionY y Repetir (todos son de tipo númerico)
+         <br>
+         - También tenemos que crear unos Atributos del juego: Esperar y Juego Terminado (ambos Booleanos inicializados a Falso), numero bloques, numero bloques 
+         eliminados, Vidas (de tipo númerico)
+         <br>
+         - Al comienzo del juego inicializar numero bloques, numero bloques eliminados y Puntos a 0. Y Vidas a 3.
+         <br>
+         - Los podemos crear de muchas maneras una de ellas es utilizando el repetir y mandando un Custom Event que es que crea el Bloque, inicializando
+         las variables de Puntos, Repetir, PosicionX, PosicionY, PosicionX Inicial (por cada fila) y sumando al numero de bloques los bloques que creamos.
+       </p>
+       <p class="img_centrada"><img src="img/juego2/2-9.png" width="40%" alt=""></p>
+       <p class="img_centrada"><img src="img/juego2/2-10.png" width="40%" alt=""></p>
+ 
+       <p class="texto">    
+         Crearemos un grupo de Colision llamado "Bloques" que solo colisionara con el grupo de Colisión "Pelota" que lo tendrá asignado la pelota.
+       </p>
+       <p class="img_centrada"><img src="img/juego2/2-11.png" width="60%" alt=""></p>
+
+       <p class="texto">    
+         Añadir un nuevo Evento en el Escenario de "Actor Created" para que cuando se elimine una entidad que pertenezca al Grupo de los Bloques se 
+         sumen los Puntos.
+       </p>
+       <p class="img_centrada"><img src="img/juego2/2-12.png" width="60%" alt=""></p>
+
+       <p class="texto">    
+         Y necesitamos otro Evento de Drawing para mostrar los Puntos y las Vidas pero con una fuente que creemos en Central del juego/Fuente.
+       </p>
+       <p class="img_centrada"><img src="img/juego2/2-13.png" width="60%" alt=""></p>
+
+       <p class="nota">    
+         Faltaria hacer algo mñas en la entidad Geen Block pero lo veremos más adelante.
+      </p>
+
       <h4>Paddle</h4>
       <p class="texto">    
          Para crear una entidad daremos al botón, le ponemos un nombre y daremos al botón de crear.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-9.png" width="15%" alt=""></p>
-      <p class="img_centrada"><img src="img/juego2/2-10.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-14.png" width="15%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-15.png" width="40%" alt=""></p>
 
       <p class="texto">    
-        Nos aparece una ventana que nos dice que no tenemos animaciones, asi que le damos al botón central para añadir una animación. 
+        Nos aparece una ventana que nos dice que no tenemos animaciones, asi que le damos al botón para añadir una animación. 
         <br>
         Pulsamos el botón para añadir un fotograma.
         <br>
         Escala 1 y seleccionar la imagen "Paddle.png". Le cambiamos el nombre de la animación (Siempre sin acentos).
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-11.png" width="15%" alt=""></p>
-      <p class="img_centrada"><img src="img/juego2/2-12.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-16.png" width="15%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-17.png" width="40%" alt=""></p>
 
       <p class="texto">    
         Ahora comenzaremos con la programación del Paddle.
@@ -139,7 +175,7 @@
         <br>
         - Y si no damos ni a la tecla derecha ni a la izquierda lo ponemos a 0 para que deje de moverse el Paddle.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-13.png" width="70%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-18.png" width="70%" alt=""></p>
 
       <p class="nota">
          A la hora de poner bloques si no queremos ese bloque podemos arrastrarlo a la basura que esta arriba a la derecha ó podemos dar click derecho
@@ -154,30 +190,30 @@
         - Y si la posición X + su anchura es mayor que anchura de la escena menos la anchura del tile igual su X a anchura de la escena menos
          la anchura del tile.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-14.png" width="80%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-19.png" width="80%" alt=""></p>
 
       <p class="texto">    
         Pondremos su colisión.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-15.png" width="15%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-20.png" width="15%" alt=""></p>
 
       <p class="texto">    
         En la Fisica. No se puede empujar y no podrá rotar.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-16.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-21.png" width="40%" alt=""></p>
 
       <p class="texto">     
         Y pondremos que pertenezca al grupo de los Players. Que en Settings/Grupos de colisión los Players colisionaran con la "Tiles" y con un grupo que 
         creemos que sera "Pelota" que lo añadiremos a nuestra ball.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-17.png" width="20%" alt=""></p>
-      <p class="img_centrada"><img src="img/juego2/2-18.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-22.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-23.png" width="40%" alt=""></p>
 
       <p class="texto">    
         Nos faltaria crear una Conducta que se llame "Lanzar Pelota". Para ello vamos Central del juego/Conductas y como la vamos añadir a una entidad,
         la conducta será "Para entidades". Creamos la conducta y le ponemos su nombre.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-19.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-24.png" width="30%" alt=""></p>
       <p class="nota">
         Las conductas las podemos exportar para poder utilizarla en otro proyecto e incluso podemos tener "Atributos" para poder pasar valores como: tipo de 
         entidades, ángulo....... En nuestro caso estas variables las tengo ocultas porque no las voy a necesitar.
@@ -185,16 +221,16 @@
         Las podemos encontrar en la parte de la derecha de nuestra conducta. Paleta serán los bloques de programación, Atributos estarán los atributos que 
         queremos pasar por parámetro. Y en Favoritos podemos tener bloques favoritos asignados.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-20.png" width="30%" alt=""></p>
-      <p class="img_centrada"><img src="img/juego2/2-21.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-25.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-26.png" width="30%" alt=""></p>
 
       <p class="texto">    
          Una vez creada tenemos que añadir la Conducta "Lanzar Pelota" a la entidad "Paddle". Dentro de las Conductas del Paddle hay un botón que
          aparece a la abajo a la izquierda. Le damos y nos aparece otra ventana para seleccionar la conducta.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-22.png" width="30%" alt=""></p>
-      <p class="img_centrada"><img src="img/juego2/2-23.png" width="40%" alt=""></p>
-      <p class="img_centrada"><img src="img/juego2/2-24.png" width="85%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-27.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-28.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-29.png" width="85%" alt=""></p>
 
       <p class="texto">    
         Ahora vamos a programar la conducta "Lanzar Pelota". Damos al botón de "Editar Conducta".
@@ -208,14 +244,34 @@
         <br>
         - Deje otro bloque pero no está enganchado para que si quieren podríamos hacer que tuvieramos varias pelotas a la vez.
       </p>
-      <p class="img_centrada"><img src="img/juego2/2-25.png" width="80%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego2/2-30.png" width="80%" alt=""></p>
 
-      <h4>Pelota</h4>
+      <h4>Green Block</h4>
+      
       <p class="texto">    
         
       </p>
       <p class="img_centrada"><img src="img/juego2/2-.png" width="15%" alt=""></p>
-
+      <p class="texto">    
+        
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-.png" width="15%" alt=""></p>
+      <p class="texto">    
+        
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-.png" width="15%" alt=""></p>
+      <p class="texto">    
+        
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-.png" width="15%" alt=""></p>
+      <p class="texto">    
+        
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-.png" width="15%" alt=""></p>
+      <p class="texto">    
+        
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-.png" width="15%" alt=""></p>
       <p class="texto">    
         
       </p>
