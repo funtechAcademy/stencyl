@@ -93,6 +93,10 @@
          que tenemos disponibles para poder utilizar). En la solapa del Inspector no aparecera nada de momento ya que no tenemos ningún personaje
          dentro de la Escena.
       </p>
+      <p class="nota">
+         Ls Baldosas se tendrán que meter dentro de Central del juego/Biblioteca/Set de baldosas.
+      </p>
+
       <p class="img_centrada"><img src="img/juego1/1-5.png" width="25%" alt=""></p>
       <p class="img_centrada"><img src="img/juego1/1-6.png" width="25%" alt=""></p>
       <p class="img_centrada"><img src="img/juego1/1-7.png" width="25%" alt=""></p>
@@ -244,6 +248,8 @@
          Tecla "I" Opacidad. En el Evento "Created" inicializaremos una variable de "Opacidad" a 100. En el Evento de Keyboard si esta a 100 lo volvemos
          a inicializar a 10 y haremos un incremento de opacidad sumando 10 a esa variable.
          <br>
+         <br>
+         Tecla "O". Desactivamos opacidad y quitamos todos los efectos.
       </p>
       <p class="img_centrada"><img src="img/juego1/1-28.png" width="40%" alt=""></p>
       <p class="img_centrada"><img src="img/juego1/1-29.png" width="40%" alt=""></p>
@@ -296,86 +302,130 @@
 
       <h4>Clown (Payaso)</h4>
       <p class="texto">    
-         El Clown tiene 3 animaciones: Andar izquierda/derecha y Stomped que será la animación que pondremos cuando el Noni le toque por arriba y lo eliminemos.
+         El Clown tiene 2 animaciones: Andar izquierda y Stomped que será la animación que pondremos cuando el Noni le toque por arriba y lo eliminemos.
       </p>
       <p class="img_centrada"><img src="img/juego1/1-37.png" width="20%" alt=""></p>
+
+      <p class="texto">    
+         Necesitariamos otra animación de Andar Derecha. Para poder implementarla haremos lo siguiente.
+         - Seleccionar la animación Andar Izquierda.
+         <br>
+         - En el menu de Stencyl vemos Editar/Duplicar Animación y se duplicara.
+         <br>
+         - Tenemos que cambiar su dirección volvemos a seleccionar Editar/Voltear Horizontalmente. 
+         <br>
+         - Solo faltaria cambiar el nombre de la animación a "Andar Derecha".
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-38.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-39.png" width="20%" alt=""></p>
 
       <p class="texto">    
          Evento de Updating y el Clown andara de izquierda a derecha continuamente y cuando llegue a una determinada posición crearemos una variable booleana "Derecha"
          (verdadero/falso).
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-38.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-40.png" width="40%" alt=""></p>
 
       <p class="texto">    
          Otro Evento Updating y si "Derecha" es verdadero cambiar animación y que se mueva hacia la derecha y si es falso haremos lo contrario. Se movera mientras este vivo y no lo 
          halla matado el Noni si ha sido golpeado por arriba, que  cambiaremos su animación por el de Stomped y lo destruiremos al cabo de unos segundos.
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-39.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-41.png" width="40%" alt=""></p>
 
       <p class="texto">    
          Y para hacer que colisione el Payaso con el Noni por la parte de arriba y ponemos un sonido, restamos 1 al atributo de Enemigos y la variable "parar" a 
          verdadero para que en el Updating no siga moviendose....
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-40.png" width="50%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-42.png" width="50%" alt=""></p>
 
       <p class="texto">    
          El Payaso también tiene Física.
          <br>
          En Física/General pondremos la Física al Payaso. El resto de las opciones en este juego no hace falta tocar nada. Pero el alumno puede investigar. 
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-41.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-43.png" width="40%" alt=""></p>
 
       <p class="texto">    
          Y en Propiedades ponemos a que grupo de colisión pertenece el Payaso.
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-42.png" width="50%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-44.png" width="50%" alt=""></p>
 
       <h4>Bala</h4>
       <p class="texto">    
          La Bala solo tiene una animación.
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-43.png" width="10%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-45.png" width="10%" alt=""></p>
 
       <p class="texto">    
          Solo tendrá un evento de tipo Collisions/Member of Group y hacemos que cuando la bala golpee al Payaso restamos al atributo Enemigos 1 y eliminamos
          tanto la bala como el Payaso.
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-44.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-46.png" width="60%" alt=""></p>
    
       <p class="texto">    
          La Colisión están ya definidas tanto en la Bala como en el resto de las Entidades. Aunque si el alumno quiere podría modificarlo.
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-45.png" width="20%" alt=""></p>
-      <p class="img_centrada"><img src="img/juego1/1-46.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-47.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-48.png" width="40%" alt=""></p>
 
       <p class="texto">    
          La Bala también tiene Física.
          <br>
          En Física/General pondremos la Física a la Bala. El resto de las opciones en este juego no hace falta tocar nada. Pero el alumno puede investigar. 
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-47.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-49.png" width="40%" alt=""></p>
 
       <p class="texto">    
          Y en Propiedades ponemos a que grupo de colisión pertenece la Bala.
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-48.png" width="50%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-50.png" width="50%" alt=""></p>
 
       <p class="texto">    
          Y la Bala colisionara con el grupo de payaso. 
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-49.png" width="50%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-51.png" width="50%" alt=""></p>
 
       <h4>Sonidos</h4>
       <p class="texto">    
          Tendremos 4 sonidos ya implementados.
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-50.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-52.png" width="40%" alt=""></p>
 
       <h4>Set de Baldosas</h4>
       <p class="texto">    
          Tendremos 1 Set de baldosas.
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-51.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-53.png" width="30%" alt=""></p>
+
+
+      <h3>Reto propuesto en el juego</h3>
+      <p class="texto">    
+         Se puede añadir una plataforma y poner un Clown y que se mueva de izquierda a derecha continuamente en la plataforma.
+         <br>
+         - Tenemos que ir al Set de baldosas y las dos que sean con un final redondito le ponemos en "Data" cualquier texto como pej: Puntofinal.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-54.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-55.png" width="20%" alt=""></p>
+
+      <p class="texto">    
+         - En el Escenario dibujamos la plataforma con esas dos baldosas a cada lado. Y ponemos a un Clown sobre la baldosa que no tenga
+         está restricción.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-56.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         -  Crear en el Clown un Evento de Collision/Member of Group. Y hacemos la colisión de la entidad con las Tiles. Y preguntamos por 
+         el texto que hemos escrito dentro de las tiles redondeadas.
+         <br>
+         - Preguntando por la x-speed del personaje usaremos el attibuto booleano Derecha para cambiar de dirección.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-57.png" width="60%" alt=""></p>
+
+      <p class="texto">    
+         Hay que acordarse de cambiar la colisión de los Grupos de las Tiles y del Clown.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-58.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-59.png" width="60%" alt=""></p>
+
 
 <!-- 
       <p class="texto">    
