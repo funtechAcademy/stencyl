@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Arkanoid - Pasos</title>
+   <title>MiniDungeon - Pasos</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Arkanoid - Pasos</h1>
+      <h1>MiniDungeon - Pasos</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,32 +21,34 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Arkanoid - Pasos</h2>
+      <h2>MiniDungeon - Pasos</h2>
       <p class="texto">
-         1º - Escena con el fondo y las tiles en los laterales y en la parte de arriba.
+         1º - Hacemos la Escena de Entrada al laberinto con un salida que la pondremos con Tiles de color negro.
          <br><br>
-         2º - Los bloques se crearan desde el Escenario y serán clones. Hacerlo de una forma eficiente pudiendose añadir un Custom Event 
-         para no repetir tanto código. 
+         2º - El movimiento del Player lo haremos con las flechas y el disparo con el espacio. 
          <br><br>
-         3º - Paddle se moverá de izquierda a derecha con las flechas sin sobrepasar las tiles.
+         3º - Tendremos que hacer 3 Niveles en el Juego. En el primer nivel solo tendrá Enemigos. Segundo nivel Enemigos e Interruptor Suelo.
+         Tercer nivel Enemigos, Interruptor suelo e Interruptor torre. Se pasara de un nivel a otro cuando ya no tengas enemigos y hayas dado a los
+         Interruptores cambiandolos de animación. Y a continuación se abriria un puerta que estaría como camuflada para que pase al siguiente nivel.
          <br><br>
-         4º - La pelota se lanzara con el espacio e ira desde el paddle hacia arriba rebotando tanto con los bloques, tiles y el paddle. Tendremos solo 3 vidas. 
-         Y habra solo una pelota en la escena.
+         4º - Cuando entramos en cualquier nivel habrá una puerta que se deslizara para que se cierre esa puerta.
          <br><br>
-         5º - Los bloques tendrán 2 vidas cambiando de color y cuando se eliminen puntuara.
+         5º - El Enemigo se movera aleatoriamente hacia las 4 direcciones. Y si le da una bala se cambiará de color y si le vuelve a dar se destruira.
+         Si da al Player le quitar 1 vida. El Player tendrá como máximo 3 vidas.
          <br><br>
-         5º - En el escenario habrá que poner la vida que tenemos y los puntos. Para ello crearemos una nueva fuente.
+         5º - Tanto los Enemigos, Interruptores y las vidas que aparecen en la escena tendremos que mostrarlo en la escena. Y asi sabremos cuantos enemigos e
+        interruptores nos quedán en la escena.
          <br><br>
          6º - Mostraremos un mensaje de "Game Over" si hemos perdido ó "You Win" si hemos ganado.
          <br><br>
-         7º - Agregar el sonido cuando la pelota rebota con el bloque.
+         7º - Agregar el sonido de Disparo, Música de fondo y puerta cuando se abra o cierre.
        </p>
 
        <h2>Retos</h2>
        <p class="texto">
-         - Que se puedan tener más pelotas a la vez.
+         - 
          <br>
-         - Que cuando ya no tenga vidas que se vuelva a recargar la escena y vuelva a empezar el juego.
+         - 
        </p>
 
 
