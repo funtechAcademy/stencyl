@@ -23,7 +23,6 @@
    <div id="contenido">
       <h2>Mini Dungeon</h2>
       <p class="texto">
-        Puerta Corredera Escala 2. Puerta.png
         <br>
         El Mini Dungeón es un divertido juego de mazmorras como los juegos de aventuras de "Zelda". Usaremos la cámara y como controlarla, regiones para poder
         entrar a otras escenas, tileset para diseñar la mazmorra, reproduciremos música ó sonidos en distintos canales de sonido para que la música de 
@@ -47,10 +46,14 @@
       </p>
       <h4>Puertas correderas</h4>
       <p class="texto">
-         En mi caso tendre 3 puertas correderas ya que cada Nivel tendrá un borde distinto y tendrán que estar ocultas para que no se sepan
+         En este caso tendremos 3 puertas correderas ya que cada Nivel tendrá un borde distinto y tendrán que estar ocultas para que no se sepan
          donde están situadas.
          <br>
          Las hice usando la aplicación de recortes.
+         <br>
+         Para incluir los Sprites vamos a nuestro directorio donde tengamos los sprites y descargamos la "Puerta1", "Puerta2", "Puerta3" en 3 entidades
+         distintas. Descargarla con la Escala a 2. En este ejemplo he usado estás puertas pero el alumno puede dibujar otro tipo de diseño y tendrá que 
+         hacer sus propias puertas.
       </p>
 
       <h4>Interruptores</h4>
@@ -60,6 +63,9 @@
         - Interruptor suelo que aparecera tanto en el Nivel 2 y 3.
         <br>&ensp;&ensp; 
         - Interruptor torre que solo estará en el Nivel 3.
+        <br>&ensp;&ensp; 
+        Para incluir los Sprites vamos a nuestro directorio donde tengamos los sprites y descargamos las "Interruptor Suelo Activado" e 
+        "Interruptor Suelo Desactivado" en la misma Entidad.
       </p>
    
       <h3>Paso A Paso</h3>
@@ -240,7 +246,7 @@
      <p class="img_centrada"><img src="img/juego3/3-21.png" width="40%" alt=""></p>
 
      <p class="texto">    
-      Mi Nivel quedaría de la siguiente manera y pondriamos al Player encima de la entrada del color negro que sería el fondo de la puerta de entrada.
+      El Nivel del juego quedaría de la siguiente manera y pondriamos al Player encima de la entrada del color negro que sería el fondo de la puerta de entrada.
      </p>
      <p class="img_centrada"><img src="img/juego3/3-22.png" width="40%" alt=""></p>
 
@@ -334,40 +340,77 @@
      </p>
      <p class="img_centrada"><img src="img/juego3/3-32.png" width="20%" alt=""></p>
 
+     <p class="nota">    
+      Para incluirlas en los Niveles abrimos las Escenas y en la pestaña de "Conductas" las agregamos dando a un botón que está en la parte
+      de abajo a la izquierda.
+     </p>
+
      <p class="texto">    
       Conducta "Contar Personajes"
      <br>
-       Para crear la Conducta vamos a la solapa de "Central del juego" y vamos a CONDUCTAS/Para escenas
-   
+       Para crear la Conducta vamos a la solapa de "Central del juego" y vamos a CONDUCTAS/Para escenas.
+       <br>
+       Conducta Contar Personajes. Tendrá dos Eventos:
+       <br>&ensp;&ensp; 
+       - Created: Donde contaremos todas las entidades que pertenezcan al grupo de los "Actores". Le sumaremos al atributo "Slimes". Y 
+       haremos lo mismo para los Interruptores que pertenezcan al grupo de "Interruptor" sumandole al atributo "Interruptor". Estos
+       atributos los mostraremos en el Evento Drawing de las Escenas.
      </p>
-     <p class="img_centrada"><img src="img/juego3/3-.png" width="70%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-33.png" width="50%" alt=""></p>
 
      <p class="texto">    
-      
+      &ensp;&ensp; 
+      - Actor Created: Cuando el Slime es destruido restara 1 al Atributo del juego "Slimes"
      </p>
-     <p class="img_centrada"><img src="img/juego3/3-.png" width="70%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-34.png" width="50%" alt=""></p>
 
      <p class="texto">    
-      
+      Conducta "Deslizar Puerta"
+      <br>
+        Para crear la Conducta vamos a la solapa de "Central del juego" y vamos a CONDUCTAS/Para escenas.
+        <br>
+        Conducta Deslizar Puerta. Tenemos que pasarle unos atributos: 
+        <br>&ensp;&ensp; 
+        - Puerta Entrada y Puerta Salida serán un atributos de tipo Entidad. Para saber que entidad se tiene que abrir/cerrar en cada Nivel.
+         ¡Estos atributos se crean dentro de la Conducta.
+         <br>&ensp;&ensp; 
+        - Posicion a deslizar Puerta Entrada y Posicion a deslizar Puerta Salida serán un atributos de tipo Númerico. Para saber cuanto se tiene que
+        deslizaren cada Nivel. Estos atributos se crean dentro de la Conducta.
+        <br>&ensp;&ensp; 
+        - Deslizar Derecha Puerta Entrada será un atributo de tipo booleano. Para saber hacia donde tengo que deslizar la Puerta.
+      </p>
      </p>
-     <p class="img_centrada"><img src="img/juego3/3-.png" width="70%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-35.png" width="50%" alt=""></p>
+
+     <p class="nota">    
+      En este ejemplo solo he usado estos atributos. Se pueden usar más o menos dependiendo las necesidades del juego.
+     </p>
 
      <p class="texto">    
-      
-     </p>
-     <p class="img_centrada"><img src="img/juego3/3-.png" width="70%" alt=""></p>
+      Conducta Deslizar Puerta. Tenemos 3 Eventos: 
+      <br>&ensp;&ensp; 
+        - Created: Hacemos un sonido "Puerta" nada más entrar en el Nivel para que se cierre. Inicializar Atributo del juego "Puerta abierta" a falso para
+         saber que se ha cerrado. Y al cabo de unos segundo la Puerta Entrada se deslizara hacia la derecha o a la izquierda dependiendo de un parámetro boleano.
+         Para el sonido usaremos canales para no pisar el sonido de fondo del juego.
+      </p>
+     <p class="img_centrada"><img src="img/juego3/3-36.png" width="80%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-37.png" width="80%" alt=""></p>
 
      <p class="texto">    
-      
+      <br>&ensp;&ensp; 
+      - Updating Deslizar: Si no esta la "Puerta abierta" y has pisado todos los Interruptores y no hay Slimes abriremos la puerta de Salida que esta como oculta. Y 
+      volvemos a dejar el Atributo del juego "Puerta abierta" a verdadero para usarlo en el siguiente nivel. 
      </p>
-     <p class="img_centrada"><img src="img/juego3/3-.png" width="70%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-38.png" width="85%" alt=""></p>
 
      <p class="texto">    
-      
+      <br>&ensp;&ensp; 
+       - Updating Sonido: Si no esta la "Puerta abierta" y has pisado todos los Interruptores y no hay Slimes sonara el sonido. Lo hacemos aparte para que el 
+       deslizar de la puerta y el sonido se haga a la vez.
      </p>
-     <p class="img_centrada"><img src="img/juego3/3-.png" width="70%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-39.png" width="50%" alt=""></p>
      <p class="texto">    
-      
+      Faltaria hacer interruptores....
      </p>
      <p class="img_centrada"><img src="img/juego3/3-.png" width="70%" alt=""></p>
 
