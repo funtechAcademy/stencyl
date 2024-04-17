@@ -46,14 +46,14 @@
       </p>
       <h4>Puertas correderas</h4>
       <p class="texto">
-         En este caso tendremos 3 puertas correderas ya que cada Nivel tendrá un borde distinto y tendrán que estar ocultas para que no se sepan
-         donde están situadas.
+         En este caso tendremos 3 puertas correderas, ya que cada Nivel tendrá un diseño distinto y por lo tanto con un borde distinto y tendrán 
+         que estar ocultas para que no se sepan donde están situadas.
          <br>
-         Las hice usando la aplicación de recortes.
+         Estás que están en el juego se hicieron usando la aplicación de recortes.
          <br>
-         Para incluir los Sprites vamos a nuestro directorio donde tengamos los sprites y descargamos la "Puerta1", "Puerta2", "Puerta3" en 3 entidades
+         Para incluir los Sprites que utiliza este juego vamos a nuestro directorio donde tengamos los sprites y descargamos la "Puerta1", "Puerta2", "Puerta3" en 3 entidades
          distintas. Descargarla con la Escala a 2. En este ejemplo he usado estás puertas pero el alumno puede dibujar otro tipo de diseño y tendrá que 
-         hacer sus propias puertas.
+         hacer sus propias puertas. 
       </p>
 
       <h4>Interruptores</h4>
@@ -410,21 +410,45 @@
      </p>
      <p class="img_centrada"><img src="img/juego3/3-39.png" width="50%" alt=""></p>
      <p class="texto">    
-      Faltaria hacer interruptores....
+      Faltaria hacer los interruptores...Explicaremos solo el Interruptor suelo, ya que funcionan de la misma manera.
+      <br>
+      - Tendrán 2 sprites en activo y el desactivado. Pondremos el Desactivado al comenzar el juego.
      </p>
-     <p class="img_centrada"><img src="img/juego3/3-.png" width="70%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-40.png" width="20%" alt=""></p>
 
      <p class="texto">    
-      
+      - Tendra un Evento Actor-Type y cuando golpea al Player restara al Atributo del juego "Interruptor" y cambiaremos su animación a "Activo".
      </p>
-     <p class="img_centrada"><img src="img/juego3/3-.png" width="70%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-41.png" width="70%" alt=""></p>
 
      <p class="texto">    
-      
+      - La animación "Activo" no tendra colisión pero "Desactivado" si tiene colisión.
      </p>
-     <p class="img_centrada"><img src="img/juego3/3-.png" width="70%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-42.png" width="20%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-43.png" width="20%" alt=""></p>
 
+     <p class="texto">    
+      - La Física del Interruptor solamente pondremos que no se pueda mover.
+      </p>
+     <p class="img_centrada"><img src="img/juego3/3-44.png" width="30%" alt=""></p>
 
+     <p class="texto">    
+      - Y en Propiedades le ponemos que pertenezcan al Grupo de Colisuón de "Interruptor". Y colisiona con Players y Actors.
+      </p>
+     <p class="img_centrada"><img src="img/juego3/3-45.png" width="50%" alt=""></p>
+     <p class="img_centrada"><img src="img/juego3/3-46.png" width="50%" alt=""></p>
+
+     <h4>Sonidos</h4>
+     <p class="texto">    
+      Tenemos 3 Sonidos. 
+     </p>
+     <p class="img_centrada"><img src="img/juego3/3-47.png" width="40%" alt=""></p>
+
+     <h4>Fuente</h4>
+     <p class="texto">    
+      Creamos una fuente para poder mostrar las vidas, enemigos e interruptores en cada escena.
+     </p>
+     <p class="img_centrada"><img src="img/juego3/3-48.png" width="40%" alt=""></p>
 
 
 
