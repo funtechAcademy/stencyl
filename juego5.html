@@ -290,8 +290,7 @@
       - Sonido Romper Pared: Sonido cuando las balas le quitan las vidas a la Pared. Solo serán las Balas de Enemigos y de la Nave Enemiga. 
       </p>
       <p class="img_centrada"><img src="img/juego5/5-19.png" width="70%" alt=""></p>
-
-
+x
       <p class="texto"> 
       Tenemos otros 2 Sonidos más:
       <br>&ensp;&ensp; 
@@ -299,15 +298,20 @@
       <br>&ensp;&ensp; 
       - Sonido Fondo: Que estará sonando continuamente al empezar en la Escena Inicio.
       </p>
-      <p class="img_centrada"><img src="img/juego5/5-.png" width="70%" alt=""></p>
-
+    
       <h4>Enemigo</h4>
       <p class="texto"> 
          Creamos una nueva Entidad llamada "Enemigo". El Sprite "Alien.png" será a escala 1 y en Columna 2 y Fila pondremos 1. Que será
          el que este por defecto.
-         <br>
+      </p>
+      <p class="img_centrada"><img src="img/juego5/5-20.png" width="70%" alt=""></p>
+
+      <p class="texto"> 
          Tendremos que incluir otros 2 Sprites más de las vidas "Alien Vida1" y "Alien Vida2" escala 1 y Columna y Fila 1.
-         <br>
+      <p>
+      <p class="img_centrada"><img src="img/juego5/5-21.png" width="20%" alt=""></p>
+      
+      <p class="texto"> 
          Tendrá una colisión y una Física:
          <br>&ensp;&ensp; 
          - No se puede empujar.
@@ -316,14 +320,14 @@
          <br>&ensp;&ensp; 
          - El resto de las opciones se quedan como están.
       </p>
-      <p class="img_centrada"><img src="img/juego5/5-21.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego5/5-22.png" width="40%" alt=""></p>
 
       <p class="texto"> 
          Y pertenecera al Grupo de Colisión de Enemigos.
          <br>
          El Enemigo colisionarán con: 
        </p>
-       <p class="img_centrada"><img src="img/juego5/5-22.png" width="50%" alt=""></p>    
+       <p class="img_centrada"><img src="img/juego5/5-23.png" width="50%" alt=""></p>    
 
        <p class="nota">
          El grupo de colisión Bala pertenecerá a la Bala de la Nave Player.
@@ -335,11 +339,11 @@
        <br>
        Iremos sumando otro atributo del juego "Enemigos" y pararemos de crear cuando lleguemos a ese Total Enemigos.
       </p>
-       <p class="img_centrada"><img src="img/juego5/5-23.png" width="50%" alt=""></p>
-       <p class="img_centrada"><img src="img/juego5/5-24.png" width="70%" alt=""></p>
+       <p class="img_centrada"><img src="img/juego5/5-24.png" width="50%" alt=""></p>
+       <p class="img_centrada"><img src="img/juego5/5-25.png" width="70%" alt=""></p>
 
       <p class="texto"> 
-      El Enemigo Tendrá dos Behaviour: BehaviourEnemigos y BehaviourCrearBalaEnemigo.
+      El Enemigo tendrá dos Behaviour: BehaviourEnemigos y BehaviourCrearBalaEnemigo.
       </p>
 
       <h4>BehaviourEnemigos</h4>
@@ -348,20 +352,269 @@
       <br>
       - Evento Created: Necesitamos un atributo "derecha" booleano para ir controlando la dirección del Enemigo.
       </p>
-      <p class="img_centrada"><img src="img/juego5/5-25.png" width="50%" alt=""></p>
-
+      <p class="img_centrada"><img src="img/juego5/5-26.png" width="50%" alt=""></p>
 
       <p class="texto"> 
-      BEHAVIOURENEMIGOS NO FUNCIONA BIEN EL UPDATING DE FRAME
+      - Evento Update: Si la animación es "Animacion 3" cambiaremos la velocidad del frame con un atributo del juego. Ese atributo
+      se modifica en el "Enemigo". (lo veremos mñás adelante).
       </p>
-      <p class="img_centrada"><img src="img/juego5/5-.png" width="70%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego5/5-27.png" width="70%" alt=""></p>
 
+      <p class="nota">
+        Cuidado con NO poner acentos en las Animaciones si queremos hacer alguna referencia a ellas.
+       </p>
+
+       <p class="texto"> 
+       - Evento Update: Haremos el movimiento de los Enemigos.
+       <br>&ensp;&ensp; 
+       - Van a derecha o izquierda dependiendo del atributo "derecha".
+       <br>&ensp;&ensp; 
+       - Cuando llegan a una determinada posición en X (X<=10 lado izquierdo) bajan un poco (Y) en diagonal (X).
+       <br>&ensp;&ensp; 
+       - Cuando pasan 0.3 segundos se parán un poco y continuan moviendose.
+       <br>&ensp;&ensp; 
+       - Cuando llegan a a una determinada posición en X (X>=575 lado derecho) bajan un poco (Y) en diagonal (X).
+       <br>&ensp;&ensp; 
+       - Cuando pasan 0.3 segundos se parán un poco y continuan moviendose.
+       <br>&ensp;&ensp; 
+       - Y si llegamos a una X>= 575 y Y = > 275 volverá a subir a su posición inicial de donde empezarón para que comience de nuevo 
+       su movimiento.
+      </p>
+       <p class="img_centrada"><img src="img/juego5/5-28.png" width="70%" alt=""></p>
+       <p class="img_centrada"><img src="img/juego5/5-29.png" width="70%" alt=""></p>
+
+       <h4>Enemigo</h4>
+       <p class="texto"> 
+         El Enemigo tendrá 2 eventos:
+         <br>
+         - Evento Created: Tenemos un atributo "Vidas Enemigo" para saber cuantas vidas tiene el Enemigo.
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-30.png" width="50%" alt=""></p>
+
+       <p class="texto"> 
+         - Evento Custom Event: Mensaje "Disparo". Se llama desde la Bala Nave Player cuando da al Enemigo.
+         <br>&ensp;&ensp; 
+            - Resta vida del Enemigo.
+         <br>&ensp;&ensp; 
+            - Sonara un sonido que estará en el Behaviour Sonidos.
+         <br>&ensp;&ensp; 
+            - Dependiendo de la vida le cambiara la animación ó se destruira si ya no tiene vidas.
+         <br>&ensp;&ensp; 
+            - Tendremos un atributo del Juego para ir restando Enemigos y otro para restar el Total de Enemigos que nos quedán..
+         <br>&ensp;&ensp; 
+            - Si se destruye un enemigo cambiamos la Velocidad del Frame del resto si la animación es la que tiene 2 disfraces. Pero
+            con un limite de velocidad.
+         </p>
+         <p class="img_centrada"><img src="img/juego5/5-31.png" width="70%" alt=""></p>
+
+      <h4>Bala Enemigo</h4>
+      <p class="texto"> 
+         Creamos una nueva Entidad llamada "Bala Enemigo". El Sprite "Bala Enemigo.png" será a escala 1 y en Columna y Fila pondremos 2.
+         <br>
+         - Se crea una animación con 4 frames. La última no tiene nada asi que habrá que eliminarla.
+         <br>
+         Tendrá una colisión y una Física:
+         <br>&ensp;&ensp; 
+         - Normal.
+         <br>&ensp;&ensp; 
+         - No podrá rotar y no está afectado por la gravedad.
+         <br>&ensp;&ensp; 
+         - El resto de las opciones se quedan como están.
+      </p>
+  
+      <p class="texto"> 
+        Y pertenecera al Grupo de Colisión de Bala Enemigos.
+        <br>
+        La Bala colisionarán con: 
+      </p>
+      <p class="img_centrada"><img src="img/juego5/5-32.png" width="50%" alt=""></p>
+
+       <p class="texto"> 
+       Tendremos 2 Eventos:
+       <br>
+       - Evento Actor-Group-Nave: Le quito vida a la Nave, hacemos un sonido y destruimos la bala.
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-33.png" width="70%" alt=""></p>
+
+       <p class="texto"> 
+        - Evento Enters Screen: Si la bala sale de la escena se destruye. Tenemos que hacerlo en el Evento ya que en el BehaviourCrearBalaEnemigo
+        NO funciona.
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-34.png" width="70%" alt=""></p>
+
+       <h4>BehaviourCrearBalaEnemigo</h4>
+       <p class="texto"> 
+         Este Behaviour estará en la entidad de Enemigo ya que asi sabemos su posición continuamente de cada uno.
+         <br>
+         Creamos la Bala Enemigo cada cierto tiempo, ponemos un sonido y la lanzamos con el bloque de presionar como todas las balas.
+         Hacia abajo y con una fuerza. 
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-35.png" width="90%" alt=""></p>
+
+       <h4>Nave Enemiga</h4>
+       <p class="texto"> 
+         Creamos una nueva Entidad llamada "Nave Enemiga". El Sprite "Nave Enemiga.png" será a escala 1 y en Columna y Fila pondremos 1.
+         <br>
+         Para las vidas tenemos que incluir más Sprites: "Nave Enemiga 1.png", "Nave Enemiga 2.png", "Nave Enemiga 3.png" y "Nave Enemiga 4.png".
+         <br>
+         Tendrá una colisión y una Física:
+         <br>&ensp;&ensp; 
+         - No se puede empujar.
+         <br>&ensp;&ensp; 
+         - No podrá rotar..
+         <br>&ensp;&ensp; 
+         - El resto de las opciones se quedan como están.
+      </p>
+  
+      <p class="texto"> 
+        Y pertenecera al Grupo de Colisión de Nave Enemiga.
+        <br>
+        La Nave Enemiga colisionarán con la Bala de la Nave: 
+      </p>
+      <p class="img_centrada"><img src="img/juego5/5-36.png" width="50%" alt=""></p>
+
+       <p class="texto"> 
+       La Nave Enemiga tendrá dos Behaviour: BehaviourNaveEnemiga y BehaviourCrearBalaNaveEnemiga.
+       </p>
+
+       <h4>BehaviourNaveEnemiga</h4>
+       <p class="texto"> 
+       Se encargara del movimiento de un lado a otro y cuando llega a una determinada posición cambia de dirección. Necesitamos 2 Eventos:
+       <br>
+       - Evento Created: Ponemos la x-speed para que comience a ir hacia la izquierda.
+      </p>
+      <p class="img_centrada"><img src="img/juego5/5-37.png" width="50%" alt=""></p>
 
       <p class="texto"> 
+       - Event Update: Cuando llegue a una posicón determinada se ha hacia la dirección contraria.
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-38.png" width="60%" alt=""></p>
+
+
+       <h4>BehaviourCrearBalaNaveEnemiga</h4>
+       <p class="texto"> 
+         Este Behaviour estará en la entidad de Nave Enemiga ya que asi sabemos su posición.
+         <br>
+         Creamos la Bala Nave Enemiga cada cierto tiempo, ponemos un sonido y la lanzamos con el bloque de presionar como todas las balas.
+         <br>
+         Hacia abajo y con una fuerza pero tenemos que usar un nuevo bloque "atan2" para que vaya hacia donde este nuestra nave.
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-39.png" width="90%" alt=""></p>
+
+       <p class="texto"> 
+        Voy a descomponer el bloque del presionar para que se vea más claro.
+        <br>
+        Lo vamos componiendo de abajo hacia arriba. El bloque de la Y dentro de "y:" y el bloque de la X dentro de "x:"
+        <br>
+        Podemos observar que hay dos atributos del Juego "Player posicionX" y "Player posicionY" donde se guardara continuamente la
+        posición de la Nave.
+        <br>
+        El bloque "atan2" se mete dentro del bloque de "degrees". Y este bloque dentro de "hacia".
+      </p>
+       <p class="img_centrada"><img src="img/juego5/5-40.png" width="70%" alt=""></p>
+
+       <h4>Nave Enemiga</h4>
+       <p class="texto"> 
+         La Nave Enemiga tendrá 2 eventos:
+         <br>
+         - Evento Created: Tenemos un atributo "Vidas Nave Enemiga" para saber cuantas vidas tiene la Nave Enemiga. Y estárá continuamente
+         haciendo un Sonido
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-41.png" width="60%" alt=""></p>
+
+       <p class="texto"> 
+         - Evento Custom Event: Mensaje "DisparoNave". Se llama desde la Bala Nave Player cuando da a la Nave Enemiga.
+         <br>&ensp;&ensp; 
+            - Resta vida a la Nave Enemiga.
+         <br>&ensp;&ensp; 
+            - Sonara un sonido que estará en el Behaviour Sonidos.
+         <br>&ensp;&ensp; 
+            - Dependiendo de la vida le cambiara la animación ó se destruira si ya no tiene vidas.
+      </p>
+       <p class="img_centrada"><img src="img/juego5/5-42.png" width="70%" alt=""></p>
+       
+       <h4>Nave Player</h4>
+       <p class="texto"> 
+         La Nave Player tendrá 1 eventos:
+         <br>
+         - Evento Update: Cuando no tenga más vidas aparecerá otro Escenario de "Game Over".
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-43.png" width="80%" alt=""></p>
+
+       <h4>Pared</h4>
+       <p class="texto"> 
+         Creamos una nueva Entidad llamada "Pared"1. El Sprite "Pared.png" será a escala 1 y en Columna y Fila pondremos 1.
+         <br>
+         Para las vidas tenemos que incluir más Sprites: "Pared1.png" y "Pared2.png".
+         <br>
+         Tendrá una colisión y una Física:
+         <br>&ensp;&ensp; 
+         - No se puede mover.
+         <br>&ensp;&ensp; 
+         - El resto de las opciones se quedan como están.
+      </p>
       
+      <p class="texto">
+         Y pertenecera al Grupo de Colisión de Pared.
+         <br>
+         La Pared colisionará con: 
       </p>
-      <p class="img_centrada"><img src="img/juego5/5-.png" width="70%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego5/5-44.png" width="50%" alt=""></p>
      
+      <p class="texto"> 
+         La Pared tendrá 3 eventos:
+         <br>
+         - Evento Created: Tenemos un atributo "Vidas Muro" para saber cuantas vidas tiene la Pared.
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-45.png" width="50%" alt=""></p>
+
+       <p class="texto"> 
+         - Evento Actor - Type - Bala Enemigo: Le restará 1 vida a la Pared. Ha que un Sonido que estará en el 
+         BehaviourSonidos. Y si ya no tiene vidas se destruye la Pared. También se destruye la bala que le ha dado. 
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-46.png" width="70%" alt=""></p>
+
+       <p class="texto"> 
+         - Evento Actor - Type - Bala Nave Enemiga: Le restará 1 vida a la Pared. Ha que un Sonido que estará en el 
+         BehaviourSonidos. Y si ya no tiene vidas se destruye la Pared. También se destruye la bala que le ha dado. 
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-47.png" width="70%" alt=""></p>
+
+
+       <h4>Vida1,2,3</h4>
+       <p class="texto"> 
+         Creamos una nueva Entidad llamada "Vida1", "Vida2" y "Vida3". El Sprite "Vida.png" será a escala 1 y en Columna y Fila pondremos 1.
+         <br>
+         No tendrá una colisión y una Física:
+         <br>&ensp;&ensp; 
+         - No se puede mover.
+         <br>&ensp;&ensp; 
+         - El resto de las opciones se quedan como están.
+         <br>
+         La Vida1 tendrá 2 eventos:
+         <br>
+         - Evento Created: Inicializamos un Atributo del Juego "Vidas" a 3. Solo lo tendrá este evento la entidad Vida1.
+      </p>
+       <p class="img_centrada"><img src="img/juego5/5-48.png" width="50%" alt=""></p>
+
+       <p class="texto"> 
+       - Updating: Si la Vida es 0 se destruye la entidad.
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-49.png" width="50%" alt=""></p>
+
+       <p class="nota"> 
+          La entidades de Vidas las pondremos en orden en la Escena como Vida1, Vida2 y Vida3. Y en Vida2 preguntamos por vida = 1
+          y en Vida2 por vida = 2.
+       </p>
+     
+       <h4>Escena Play</h4>
+       <p class="texto"> 
+          En esta escena nos faltaria añadir un nuevo Evento.
+          <br>
+          - Evento Updating: Para controlar que si no tenemos Enemigos y la NAve Enemiga ya no tiene vidas que aparezca la Escena
+          "Game Over".
+       </p>
+       <p class="img_centrada"><img src="img/juego5/5-50.png" width="80%" alt=""></p>
      
 
 <!-- 
