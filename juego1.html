@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Crash Course Kit</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Crash Course Kit</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Crash Course Kit</h2>
+      <p class="texto">
+         Este juego nos ayudara a tener un primer contacto con Stencyl.
+      </p>
+
+      <h3>Objetos Necesarios</h3>
+      <h4>Noni</h4>
+      <p class="texto">
+         Será nuestro personaje principal, y se moverá por la pantalla con las flechas derecha e izquierda. Saltará con la tecla de arriba. Dispara
+         con el espacio. Cambia de color con la letra P. Lo pondremos opaco y con la letra I haremos que vuelva aparecer poco a poco y quitamos efectos
+         gráficos y el color con la letra O. Tendrá 3 vidas.
+      </p>
+      <h4>Clown</h4>
+      <p class="texto">
+         Se movera de derecha a izquierda continuamente cambiando de animación. Y si toca al noni le quitara 1 vidas.
+      </p>
+      <h4>Bala</h4>
+      <p class="texto">
+         El noni dispara la bala con la tecla del espacio. Y si da al clown lo eliminara.
+      </p>
+
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Haremos un escenario y en propiedades podemos cambiar el color del fondo a Gradiente Vertical con dos colores para el juego.
+         <br>
+         Y necesitaremos otro escenario de "Game Over" y otro de "You loose". Por si ganas o pierdes el juego.
+      </p>
+
+      <p class="nota">
+         El Juego es un Kit con lo cual ya vendrán todas las Entidades, Sonidos, y Set de Baldosas rellenos. Pero sin el código que lo tendrá que hacer
+         el alumno. Para descargarte el kit de inicio pulsa
+         <a class="link_s" download href="juegos/KitCrashCourse.stencyl">aquí</a>.
+      </p>
+      
+      <h3>Paso A Paso</h3>
+      <p class="texto">
+         El juego consiste en que el Noni se mueve con las flechas de derecha e izquierda y podrá matar al Clown saltando sobre el ó disparándolo.
+         <br>
+         El Noni tendrá 3 vidas que se eliminarán si el Clown toca al Noni por los lados. 
+         <br>
+         Y haremos diferentes efectos sobre el Noni mediante teclas.
+         <br>
+         Y en la escena apareceran las Vidas del Noni y los Enemigos que tengo que se irán restando cuando el Noni los vaya mantando.
+      </p>
+
+     <h4>Escenario</h4>
+      <p class="texto">    
+         Lo primero que tenemos que hacer para hacer un juego es crear un Escenario. En la pantalla principal dentro de Biblioteca hay una opción y 
+         seleccionamos "Escenas".
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-1.png" width="25%" alt=""></p>
+
+      <p class="texto">    
+         Pulsamos sobre el cuadrado que aparece.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-2.png" width="25%" alt=""></p>
+
+      <p class="texto">    
+         Y nos aparece una ventana con unas dimensiones ya definidas. Lo dejaremos asi. Le ponemos un nombre.
+      <br>
+         Podemos cambiar el color de la ventana a Color sólido/Sin color/Gradiente Vertical. Seleccionamos Grandiente Vertical y podemos seleccionar 
+         dos colores para que quede chulo.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-3.png" width="25%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-4.png" width="25%" alt=""></p>
+
+      <p class="texto">    
+         Vamos a ver un poco las opciones que tiene la Escena. A la derecha dos solapas Paleta e Inspector. Dentro de la Paleta aparecen otra dos
+         solapas Baldosas( donde aparecerán las Baldosas para poder dibujar plataformas.....) y Entidades (donde aparecerán todas las entidades
+         que tenemos disponibles para poder utilizar). En la solapa del Inspector no aparecera nada de momento ya que no tenemos ningún personaje
+         dentro de la Escena.
+      </p>
+      <p class="nota">
+         Ls Baldosas se tendrán que meter dentro de Central del juego/Biblioteca/Set de baldosas.
+      </p>
+
+      <p class="img_centrada"><img src="img/juego1/1-5.png" width="25%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-6.png" width="25%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-7.png" width="25%" alt=""></p>
+
+      <p class="texto">    
+         Para poder dibujar el suelo de nuestro juego vamos a Paleta/Baldosas y en la izquierda hay un menu y con el lápiz que aparece podemos dibujar
+         y con la flecha podemos seleccionar y borrar lo que no queramos poner. También tenemos la opción a continuación del lápiz para dibujar en 
+        forma de rectángulo o de rellenar todo el Escenario que no tenga nada dibujado.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-8.png" width="5%" alt=""></p>
+
+      <p class="texto">    
+         Seleccionamos el lápiz y ya podemos elegir la baldosa que queremos pintar. Y con el click izquierdo pintamos encima del Escenario. Si mantengo presionado el click izquierdo puedo seguir
+         dibujando la misma baldosa. Dibujaremos 2 líneas de tierra y el césped (que jueguen un poco los alumnos y que lo
+         dibujen como quieran).
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-9.png" width="25%" alt=""></p>
+     
+      <p class="texto">    
+         Ahora ya podemos seleccionar el Noni y el Clown y los ponemos en el Escenario de la siguiente manera.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-10.png" width="25%" alt=""></p>
+
+      <p class="texto">    
+         En la Escena podemos ver en la parte de arriba estas selecciones.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-11.png" width="50%" alt=""></p>
+
+      <p class="texto">    
+         Las Conductas son comportamientos que podemos dar a nuestro juego como movimiento, morir...... Las Conductas que nosotros creamos las podemos
+         exportar y utilizar en otros juego pasándoles por parámetro pej en un comportamiento de movimiento del personaje que se va a mover, la 
+         velocidad de su movimiento, las animaciones....... (lo veremos más adelante en otro juego).
+      <br>
+         Los Eventos es donde vamos a programar nuestro juego añadiendo Eventos. (Lo veremos más adelante).
+      <br>
+         La Física podrá ser Horizontal/Vertical. Pondremos Vertical hacia abajo. Podemos modificar el valor para que haga la gravedad más rápida ó
+         más lenta. Pondremos 45 pero que el alumno juego un poco para ver como funciona. 
+      <br>
+         Atlases permite que Stencyl agrupar recursos en categorías y vincular esas categorías a escenas especificas para minimizar el uso de la
+         memoria. (Esto no nos hará falta para hacer este curso).
+      <br>
+         Y por último las Propiedades nos permitira cambiar el tamaño y el color de la Escena. Siempre usaremos por defecto baldosas.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-12.png" width="25%" alt=""></p>
+
+      <p class="texto">    
+         Otra información importante de la Escena es que en la parte de abajo a la derecha aparecen las Capas y el Inventory. Las Capas tendrán todas
+         las capas incluyendo Fondos para poder hacer pej que se estén moviendo continuamente (Lo veremos en otros juegos). Es importante que la capa 0
+         que es sobre la que trabajamos este en la primera posición y seleccionada en azul para que podamos incluir los personajes que necesitamos en la
+         Escena.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-13.png" width="25%" alt=""></p>
+
+      <p class="texto">    
+         En el Inventory aparecerá todas las entidades que tengamos en el Escenario.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-14.png" width="25%" alt=""></p>
+
+      <h4>Noni</h4>
+      <p class="texto">    
+         Vamos a comenzar a programar al Noni. El Noni se movera con la flechas izquierda/derecha/arriba (para saltar). Usaremos un Evento Updating. Lo
+         añadiremos seleccionando "+ Add Event". 
+         <p class="img_centrada"><img src="img/juego1/1-15.png" width="30%" alt=""></p>
+      </p>
+      <p class="texto">    
+         Si no queremos ese evento al lado esta el signo "-" y lo eliminará pero antes preguntará. Pero si queremos que no se use la programación
+         del evento pero que no se borre el código por si lo necesitamos más adelante podemos quitar el check que aparece a su derecha y el juego se
+         ejecutará normalmente pero no usará ese Evento.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-16.png" width="30%" alt=""></p>
+
+      <p class="texto">    
+         Una vez que tenemos añadido el Evento Updating tendremos que añadir el código. En la parte de la derecha aparecerán unos botones para poder 
+         seleccionar el bloque que necesitamos.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-17.png" width="30%" alt=""></p>
+
+      <p class="texto">    
+        En nuestro caso hay que realizar la pregunta acerca de si hemos pulsado una tecla determinada. Para ello podemos seleccionar el botón de 
+        "Flujo/Condicional" y a "Teclado y ratón/Keyboard & Mouse". Y lo arrastramos a la parte izquierda. Y para el movimiento seleccionamos el botón
+        "Entidad/Movimiento" y usaremos "set x-speed" para poder movernos en horizontal. 
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-18.png" width="30%" alt=""></p>
+
+      <p class="nota">
+         En X si vamos a la derecha serán valores positivos pero si vamos a la izquierda serán valores negativos. En Y si vamos hacia abajo serán
+         valores positivos pero si vamos hacia arriba serán valores negativos.
+      </p>
+    
+      <p class="texto">    
+         Ahora haremos las animaciones del personaje. Pondremos otro Evento Updating (los tenemos separados para que sea más fácil de manejar a nivel de código).
+         Los bloques de la animación estan en "Entidad/Dibujo" y pondremos los nombres que aparecen en la solapa de "Apariencia"
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-19.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-20.png" width="30%" alt=""></p>
+      
+
+      <p class="texto">    
+         Tenemos que hacer que el Noni salte con la flecha de arriba. Para que pueda saltar tendra que estar tocando el Suelo y que no pueda estar saltando 
+         continuamente y que no parezca que este volando. Para ello crearemos un Atributo del Juego llamado "Suelo". Este atributo se puede crear desde 
+         "Settings/Atributos" o desde el Noni hay un botón a la derecha que es "Atributos del juego". Será de tipo boolean (verdadero/falso). Damos al 
+         botón de "Crear nuevo atributo del juego" y creamos la variable. Y por defecto la ponemos a "verdadero" ya que cuando comience el juego el Noni
+         está tocando el suelo.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-21.png" width="40%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego1/1-22.png" width="10%" alt=""></p>
+
+      <p class="nota">
+         A veces cuando se crea el Atributo desde el personaje no aparece para poder modificar su valor. Así que hay que cerrar el personaje y volver abrir y asi
+         actualiza las ventanas de los "Atributos del juego".
+      </p>
+
+      <p class="texto">    
+        Para poder usar está variable tendremos que saber si está colisionando con el suelo. Para ello tenemos que definir bien los Grupos de Colisión que está
+        dentro del botón de Settings.    
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-23.png" width="10%" alt=""></p>
+
+      <p class="texto">    
+         El Noni pertenece al grupo de colisión "Players" y colisiona con "Tiles" y con el "payaso".
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-24.png" width="50%" alt=""></p>
+
+      <p class="texto">    
+         Tendremos que crear un Evento "Actor-Group". Cuando "Esta entidad" colisione con el grupo de las "Tiles". Pondremos la variable "Suelo" a verdadero.  
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-25.png" width="60%" alt=""></p>
+
+      <p class="texto">    
+         Añadimos otro evento "Updating" y si estamos tocando Suelo podremos dar a la tecla hacia arriba poniendole un sonido de Saltar. 
+         <br>
+         Volviendo a dejar la variable "Saltar" a falso.
+         <br>
+         Y subiendo la "y-speed" hacia arriba con un valor negativo.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-26.png" width="40%" alt=""></p>
+      
+      <p class="texto">    
+         Haremos otro escenario de Game Over y otro de You loose y si la variable vida = 0 aparecera el Escenario de "You loose" y si la variable
+         enemigos = 0 aparecera el Escenario de "Game Over".
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-27.png" width="40%" alt=""></p>
+      
+      <p class="texto">    
+         Vamos hacer algún efecto al Noni con las teclas. Para ello usaremos el Evento Input/Keyboard. Para añadir nuevas teclas iremos a Settings/Controles.
+         <br>
+         Tecla "P" para hacer efecto de color.
+         <br>
+         Tecla "I" Opacidad. En el Evento "Created" inicializaremos una variable de "Opacidad" a 100. En el Evento de Keyboard si esta a 100 lo volvemos
+         a inicializar a 10 y haremos un incremento de opacidad sumando 10 a esa variable.
+         <br>
+         <br>
+         Tecla "O". Desactivamos opacidad y quitamos todos los efectos.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-28.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-29.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-30.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         A los Eventos se les pueden poner nombre como está en el siguiente evento que también es de tipo Input/Keyboard y lo hemos llamado "Ataque".
+         <br>
+         Vamos hacer el disparo con la tecla Espacio.
+         <br>
+         En el "Updating" dependiendo hacia donde este mirando el Noni tendremos una variable boolena que nos indica a que dirección "Derecha" (verdadero/falso).
+         Asi podremos posicionar la bala a la derecha o a la izquierda del Noni y la podremos lanzar con "presionar" hacia un lado u otro.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-31.png" width="70%" alt=""></p>
+
+
+      <p class="texto">    
+         Nos faltaria hacer una última cosa dentro de los Eventos que es hacer una colision del Noni cuando toque por la derecha/izquierda al payaso.
+         <br>
+         Ponemos un nuevo Evento Collisions/Member of Group y hacemos que el grupo que pertenece al Nonicolisione con el grupo del payaso. 
+         Para hacer este grupo vamos a Settings/Grupos y el payaso colisionara con los Players y con la bala.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-32.png" width="50%" alt=""></p>
+
+      <p class="texto">    
+         Cuando hacemos Eventos de Colisión podemos poner bloques de Colisión de la parte de la derecha para poder arrastrar.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-33.png" width="20%" alt=""></p>
+
+      <p class="texto">    
+         Si el Noni es golpeado por la derecha o por la izquierda quitamos vidas, hacemos un sonido y cambiamos de posición al Noni para que no le siga 
+         quitando vidas.
+         <br>
+         Y si es golpeado por la parte de abajo hacemos como si rebotase subiendolo un poco, para despues hacer que el payaso cambie de disfraz y se muera
+         (esto lo haremos en el payaso).
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-34.png" width="50%" alt=""></p>
+
+      <p class="texto">    
+         El Noni también tiene Física.
+         <br>
+         En Física/General pondremos la Física al Noni. El resto de las opciones en este juego no hace falta tocar nada. Pero el alumno puede investigar. 
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-35.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         Y en Propiedades ponemos a que grupo de colisión pertenece el Noni.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-36.png" width="50%" alt=""></p>
+
+      <h4>Clown (Payaso)</h4>
+      <p class="texto">    
+         El Clown tiene 2 animaciones: Andar izquierda y Stomped que será la animación que pondremos cuando el Noni le toque por arriba y lo eliminemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-37.png" width="20%" alt=""></p>
+
+      <p class="texto">    
+         Necesitariamos otra animación de Andar Derecha. Para poder implementarla haremos lo siguiente.
+         - Seleccionar la animación Andar Izquierda.
+         <br>
+         - En el menu de Stencyl vemos Editar/Duplicar Animación y se duplicara.
+         <br>
+         - Tenemos que cambiar su dirección volvemos a seleccionar Editar/Voltear Horizontalmente. 
+         <br>
+         - Solo faltaria cambiar el nombre de la animación a "Andar Derecha".
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-38.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-39.png" width="20%" alt=""></p>
+
+      <p class="texto">    
+         Evento de Updating y el Clown andara de izquierda a derecha continuamente y cuando llegue a una determinada posición crearemos una variable booleana "Derecha"
+         (verdadero/falso).
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-40.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         Otro Evento Updating y si "Derecha" es verdadero cambiar animación y que se mueva hacia la derecha y si es falso haremos lo contrario. Se movera mientras este vivo y no lo 
+         halla matado el Noni si ha sido golpeado por arriba, que  cambiaremos su animación por el de Stomped y lo destruiremos al cabo de unos segundos.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-41.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         Y para hacer que colisione el Payaso con el Noni por la parte de arriba y ponemos un sonido, restamos 1 al atributo de Enemigos y la variable "parar" a 
+         verdadero para que en el Updating no siga moviendose....
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-42.png" width="50%" alt=""></p>
+
+      <p class="texto">    
+         El Payaso también tiene Física.
+         <br>
+         En Física/General pondremos la Física al Payaso. El resto de las opciones en este juego no hace falta tocar nada. Pero el alumno puede investigar. 
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-43.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         Y en Propiedades ponemos a que grupo de colisión pertenece el Payaso.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-44.png" width="50%" alt=""></p>
+
+      <h4>Bala</h4>
+      <p class="texto">    
+         La Bala solo tiene una animación.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-45.png" width="10%" alt=""></p>
+
+      <p class="texto">    
+         Solo tendrá un evento de tipo Collisions/Member of Group y hacemos que cuando la bala golpee al Payaso restamos al atributo Enemigos 1 y eliminamos
+         tanto la bala como el Payaso.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-46.png" width="60%" alt=""></p>
+   
+      <p class="texto">    
+         La Colisión están ya definidas tanto en la Bala como en el resto de las Entidades. Aunque si el alumno quiere podría modificarlo.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-47.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-48.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         La Bala también tiene Física.
+         <br>
+         En Física/General pondremos la Física a la Bala. El resto de las opciones en este juego no hace falta tocar nada. Pero el alumno puede investigar. 
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-49.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         Y en Propiedades ponemos a que grupo de colisión pertenece la Bala.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-50.png" width="50%" alt=""></p>
+
+      <p class="texto">    
+         Y la Bala colisionara con el grupo de payaso. 
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-51.png" width="50%" alt=""></p>
+
+      <h4>Sonidos</h4>
+      <p class="texto">    
+         Tendremos 4 sonidos ya implementados.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-52.png" width="40%" alt=""></p>
+
+      <h4>Set de Baldosas</h4>
+      <p class="texto">    
+         Tendremos 1 Set de baldosas.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-53.png" width="30%" alt=""></p>
+
+
+      <h3>Reto propuesto en el juego</h3>
+      <p class="texto">    
+         Se puede añadir una plataforma y poner un Clown y que se mueva de izquierda a derecha continuamente en la plataforma.
+         <br>
+         - Tenemos que ir al Set de baldosas y las dos que sean con un final redondito le ponemos en "Data" cualquier texto como pej: Puntofinal.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-54.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-55.png" width="20%" alt=""></p>
+
+      <p class="texto">    
+         - En el Escenario dibujamos la plataforma con esas dos baldosas a cada lado. Y ponemos a un Clown sobre la baldosa que no tenga
+         está restricción.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-56.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         -  Crear en el Clown un Evento de Collision/Member of Group. Y hacemos la colisión de la entidad con las Tiles. Y preguntamos por 
+         el texto que hemos escrito dentro de las tiles redondeadas.
+         <br>
+         - Preguntando por la x-speed del personaje usaremos el attibuto booleano Derecha para cambiar de dirección.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-57.png" width="60%" alt=""></p>
+
+      <p class="texto">    
+         Hay que acordarse de cambiar la colisión de los Grupos de las Tiles y del Clown.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-58.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego1/1-59.png" width="60%" alt=""></p>
+
+
+<!-- 
+      <p class="texto">    
+         Y el juego quedaría así.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-51.gif" width="50%" alt=""></p>
+      <p class="texto">
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/899419564/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/1-NosMovemos.sb3">aquí</a>.
+      </p>
+ -->
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
