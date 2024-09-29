@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Space Invaders - Pasos</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Space Invaders - Pasos</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Space Invaders - Pasos</h2>
+      <p class="texto">
+         1º -  Tendremos que crear 3 escenas:
+         <br>&ensp;&ensp; 
+         - Escena Inicio: Tendrá el Objeto del título del juego y un botón Play.
+         <br>&ensp;&ensp; 
+         - Escena Play: Tamaño de 640x480 (el que viene por defecto).
+         <br>&ensp;&ensp;
+         - Game Over: Con el objeto de Game Over
+         <br>
+         2º - Lo primero que haremos definir las propiedades de la Nave Player y el movimiento de la Nave Player. Lo haremos en un BehaviourNave.
+         <br><br>
+         3º - La Nave tendrá que disparar una bala con la tecla espacio. Hay que ir poniendo a que grupos de colisión pertenecen los objetos. La bala
+         de la Nave colisionara con:
+         <br>&ensp;&ensp; 
+         - Pared.
+         <br>&ensp;&ensp; 
+         - Enemigos y Nave Enemiga.
+         <br>&ensp;&ensp; 
+         - Las Balas de los Enemigos y de la Nave Enemiga.
+         <br><br>
+         4º - La Bala de la Nave tendrá la colisiones que las controlaremos en Eventos dentro de la Bala Nave Player.
+      </p>
+
+      <p class="nota">
+         Iremos haciendo a lo largo del juego un Behaviour Sonidos donde tendremos la mayoria de los sonidos. La incluiremos en la Escena Play.
+      </p>
+
+      <p class="texto">
+         5º -  Enemigos: Saldrán de un lateral e irán haciendo como un camino. La animación será más deprisa cada vez que se vayan destruyendo:
+         <br>&ensp;&ensp; 
+         - El movimiento y el cambio de velocidad del frame de la "Animacion 1" lo haremos en el BehaviourEnemigos que estára asociado con el Enemigo.
+         <br>&ensp;&ensp; 
+         - Y la comprobación de vidas y cambio de animación en el Enemigo.
+         <br><br>
+         6º - Tenemos que crear la bala del Enemigo con un número aleatorio de segundos en la posición del Enemigo. 
+         <br>
+         - Está acción la haremos en el BehaviourCrearBalaEnemigo que estára asociado con el Enemigo.
+         <br><br>
+         7º -  Nave Enemiga estára situada arriba y se moverá continuamente de derecha a izquierda y de vez en cuando saldra una bala que ira hacia donde 
+         este nuestra nave.
+         <br><br>
+         8º -   Tenemos que crear la bala de la Nave Enemiga con un número aleatorio de segundos en la posición de la Nave Enemiga y se lanzará a la posición
+         de nuestra Nave. 
+         <br><br>
+         9º -  Crear una entidad que será la Pared. Tendremos 3 Paredes. Y le quitarán vida las Bala Enemigo y la Bala Nave Enemiga.
+         <br><br>
+         10º -  Si la Nave, Enemigos ó Nave Enemiga se quedán sin vidas aparecera una Escena de "Game Over".
+         <br><br>
+         11º -  También tenemos 3 Entidades: Vida1,2 y 3. Cada vez que la Nave es golpeada por una bala se eliminará una de ellas.
+         
+<!-- 
+      <p class="texto">    
+         Y el juego quedaría así.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-51.gif" width="50%" alt=""></p>
+      <p class="texto">
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/899419564/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/1-NosMovemos.sb3">aquí</a>.
+      </p>
+ -->
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
