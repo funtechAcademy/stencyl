@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Mini Dungeon</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Mini Dungeon</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Mini Dungeon</h2>
+      <p class="texto">
+        <br>
+        El Mini Dungeón es un divertido juego de mazmorras como los juegos de aventuras de "Zelda". Usaremos la cámara y como controlarla, regiones para poder
+        entrar a otras escenas, tileset para diseñar la mazmorra, reproduciremos música ó sonidos en distintos canales de sonido para que la música de 
+        fondo este constantemente sonando. 
+        <br>
+        Para pasar de nivel tendremos que eliminar los enemigos y pisar los interruptores.
+      </p>
+
+      <h3>Objetos Necesarios</h3>
+      <h4>Player</h4>
+      <p class="texto">
+         Caminara en las cuatro direcciones pulsando las flechas y disparara con la letra "Z". Y tendrá 3 vidas.
+      </p>
+      <h4>Fireball</h4>
+      <p class="texto">
+         Es la bala que dispara el player.
+      </p>
+      <h4>Slime</h4>
+      <p class="texto">
+         Será el enemigo que se caminara de forma aleatoria. Y tendra 2 vidas. Aparecerán en todos lo niveles.
+      </p>
+      <h4>Puertas correderas</h4>
+      <p class="texto">
+         En este caso tendremos 3 puertas correderas, ya que cada Nivel tendrá un diseño distinto y por lo tanto con un borde distinto y tendrán 
+         que estar ocultas para que no se sepan donde están situadas.
+         <br>
+         Estás que están en el juego se hicieron usando la aplicación de recortes.
+         <br>
+         Para incluir los Sprites que utiliza este juego vamos a nuestro directorio donde tengamos los sprites y descargamos la "Puerta1", "Puerta2", "Puerta3" en 3 entidades
+         distintas. Descargarla con la Escala a 2. En este ejemplo he usado estás puertas pero el alumno puede dibujar otro tipo de diseño y tendrá que 
+         hacer sus propias puertas. 
+      </p>
+
+      <h4>Interruptores</h4>
+      <p class="texto">
+        Tendremos 2 clase de interruptores (Se pueden poner varios en el mismo nivel):
+        <br>&ensp;&ensp; 
+        - Interruptor suelo que aparecera tanto en el Nivel 2 y 3.
+        <br>&ensp;&ensp; 
+        - Interruptor torre que solo estará en el Nivel 3.
+        <br>&ensp;&ensp; 
+        Para incluir los Sprites vamos a nuestro directorio donde tengamos los sprites y descargamos las "Interruptor Suelo Activado" e 
+        "Interruptor Suelo Desactivado" en la misma Entidad.
+      </p>
+   
+      <h3>Paso A Paso</h3>
+      <p class="texto">
+         El juego consiste en que el Player tendrá que ir pasando de nivel pero para ello tiene que ir eliminado a los enemigos e ir pisando
+         los interruptores para que se pueda abrir la puerta que estará oculta.
+        <br>
+        En la escena debera de aparecer cuantos enemigos e interruptores hay y cada vez que se eliminen o se pisen los interruptores se restara.
+        <br>
+         La bala la dispara el Player y si da al enemigo la primera vez cambiara de color y a la segunda que le de se eliminará el enemigo.
+         <br>
+         El Juego terminara cuando ya no tengamos más vidas o cuando hallamos acabado con todos los bloques. Y pondremos una entidad de "Game Over" ó
+         "You Win".
+      </p>
+
+     <h4>Escenario</h4>
+      <p class="texto">    
+         Creamos un Escenario con la anchura y altura que ponga por defecto. Será la entrada para ir a los niveles.
+         <br>
+
+      </p>
+      <p class="img_centrada"><img src="img/actividad3/3-1.png" width="30%" alt=""></p>
+
+      <p class="texto">    
+         Lo primero que necesitamos son las Tiles (para poder ponerlas en el Escenario), asi que las tendremos que añadir al proyecto dentro de
+         Set de baldosas.
+         <br>
+        Seleccionamos el archivo "Baldosa Mazmorra1.png" y "Baldosa Mazmorra2.png". Escala la pondremos a 1.
+      </p>
+      <p class="img_centrada"><img src="img/actividad3/3-2.png" width="45%" alt=""></p>
+
+      <p class="texto">    
+       Y dibujaremos nuestro nivel. Con una salida que será de color negro para poder ir al siguiente nivel. La Escena no tendrá gravedad. 
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-3.png" width="50%" alt=""></p>
+
+     <p class="texto">    
+      Para que el Player pueda salir al siguiente Nivel necesitaremos crear una "Región". 
+      <br>
+      Para crear una Región dentro de la Escena vamos a la Escena y nos aparece en la parte de la izquierda unos botones. Seleccionamos el que pone
+       "Añadir zona (caja)". Y la ponemos donde nos interese y le podemos dar un nombre e incluso podemos cambiar su tamaño.
+    </p>
+    <p class="img_centrada"><img src="img/actividad3/3-4.png" width="15%" alt=""></p>
+    <p class="img_centrada"><img src="img/actividad3/3-5.png" width="50%" alt=""></p>
+
+     <p class="texto">    
+       La Escena tendrá 2 Eventos:
+       <br>
+       - Created. Le ponemos la Musica de fondo en un canal para no interrupir su sonido. 
+    </p>
+    <p class="img_centrada"><img src="img/actividad3/3-6.png" width="50%" alt=""></p>
+
+    <p class="texto">    
+      - Enters Region. Cuando el Player entre en la Región que hemos creado pasara al Nivel1 y comenzara el juego.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-7.png" width="70%" alt=""></p>
+
+     <p class="nota">    
+        La Escena Nivel1 lo haremos más adelante. Vamos a comenzar con el Movimiento del Player y el Disparo.
+     </p>
+     
+
+     <h4>Player</h4>
+     <p class="texto">    
+      El Player se movera con las flechas en las 4 direcciones cambiando de animación.  
+      <br>
+      La cámara le seguira continuamente.
+      <br>
+      Si nos quedamos sin vidas aparecera una escena de Game Over que haremos mediante baldosas.
+      <br>
+      Si presionamos la tecla "Z" disparara en la dirección que nos encontremos.
+      <br>
+      Si se golpea con los Slime se le quitara una vida al Player.
+      <br>
+      Antes de comenzar tendremos que poner la Fisica. Modificaremos en principio la solapa de "General"
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-8.png" width="40%" alt=""></p>
+
+     <p class="texto">    
+      En Material subimos un poco la Elasticidad para cuando se de con el Slime rebote un poco.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-9.png" width="30%" alt=""></p>
+
+
+     <p class="texto">    
+      Y en Propiedades pertenecerá al grupo de los "Players".
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-10.png" width="50%" alt=""></p>
+
+     <p class="texto">    
+      Comenzaremos con los Eventos del Player:
+      <br>
+      - Created: Lo que haremos es que la cámara se situe donde este y personaje y nos creamos una Atributo del juego "vidas" que le asignaremos
+      el valor de 3.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-11.png" width="70%" alt=""></p>
+
+     <p class="nota">    
+      Tendremos varios Eventos de tipo Updating para tenerlo un poco más controlado. Se pueden renombrar con otro nombre para saber que es
+      lo que hace cada evento.
+     </p>
+
+     <p class="texto">    
+      - Updating: La cámara estará continuamente siguiendo al Player.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-12.png" width="30%" alt=""></p>
+
+     <p class="texto">    
+      - Updating: Haremos el movimiento y el cambio de animaciones. Si no pulsamos nínguna flecha el Player se quedára quieto.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-13.png" width="40%" alt=""></p>
+     <p class="img_centrada"><img src="img/actividad3/3-14.png" width="40%" alt=""></p>
+
+     <p class="texto">    
+      - Updating: Si ya no le quedán vidas aparecera la Escena de Game Over y pararemos todos los sonidos.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-15.png" width="70%" alt=""></p>
+
+     <p class="nota">    
+       Tendriamos que hacer una nueva Escena llamada "Game Over". El texto lo podemos hacer con las Tiles haciendo la forma de las letras. Igual
+       tendriamos que hacer una Escena "Final" que tuviera un texto de "You Win".
+     </p>
+
+     <p class="texto">    
+      - Keyboard: Si le damos a la tecla "Z" se lanzará el disparo. Y dependiendo de que animación tenga el Player el disparo ira a una 
+      dirección u otra.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-16.png" width="75%" alt=""></p>
+     <p class="img_centrada"><img src="img/actividad3/3-17.png" width="45%" alt=""></p>
+     <p class="nota">    
+      El movimiento del Fireball se podria hacer con otro bloque "presionar" en vez "x e y-speed" y la dirección con una variable en vez de con las
+      animaciones.
+     </p>
+
+     <p class="nota">    
+      Nos faltaria hacer en el Player la colisión con las Slimes que lo haremos cuando hagamos a los Slimes y los programemos.
+     </p>
+  
+     <h4>Fireball</h4>
+     <p class="texto">    
+      El Fireball aparecerá cuando le demos a la tecla "Z" e ira hacia la dirección en que se encuentre el Player (Ya lo hicimos desde el Player).
+      <br>
+      La Física General del Fireball será la misma que la del Player. El resto de las solapas de la Física no las tocamos.
+      <br>
+      Nos faltaria hacer dos tipos de Eventos de Colisión uno con las Tiles y otro con el Grupo de colisión "Puerta de Pared". En ambos casos lo 
+      único que hariamos es destruir el Fireball.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-18.png" width="70%" alt=""></p>
+     <p class="img_centrada"><img src="img/actividad3/3-19.png" width="70%" alt=""></p>
+
+     <p class="texto">    
+      Haremos un nuevo Grupo de Colisión "Fireball" que colisionara con: Tiles, Actors y se lo pondremos al Fireball y otro nuevo Grupo 
+      que haremos que son Puerta de pared.
+      <br>
+      El Grupo de Colisión Puerta de pared colisionara con: Players, Actors y Fireball.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-20.png" width="50%" alt=""></p>
+
+     <h4>Nivel 1</h4>
+     <p class="texto">    
+      Tendremos que saber varias cosas antes de comenzar:
+      <br>&ensp;&ensp; 
+        - En todas las Escenas tenemos que tener 2 Conductas: Contar Personajes y Deslizar Puerta.
+        <br>&ensp;&ensp; 
+        - Habrá que tener en pantalla las Vidas del Player y cuantos enemigo o interruptores hay para eso necesitamos la conducta de Contar Personajes.
+        <br>&ensp;&ensp; 
+        - Y necesitaremos otra Región para pasar al siguiente nivel.
+     </p>
+
+   
+     <p class="texto">    
+      Empezamos....
+      <br>
+       Cuando el Player atraviesa la Puerta de la entrada haciamos un switch al Nivel 1 que todavia no teniamos creada la Escena. Asi que vamos hacerlo ahora.
+       <br>
+       El tamaño de las Escenas de los niveles los haremos más grandes para que la cámara pueda seguir al Player.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-21.png" width="40%" alt=""></p>
+
+     <p class="texto">    
+      El Nivel del juego quedaría de la siguiente manera y pondriamos al Player encima de la entrada del color negro que sería el fondo de la puerta de entrada.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-22.png" width="40%" alt=""></p>
+
+     <p class="nota">    
+      Cuando ejecutemos el juego no lo veremos todo a la vez. Solo veremos un trozo ya que cuando creamos el Juego le dimos unas dimensiones.
+      Esto lo podemos ver en Settings/Configuración/Display
+     </p>
+
+     <p class="img_centrada"><img src="img/actividad3/3-23.png" width="30%" alt=""></p>
+    
+     <p class="texto">    
+      Pondremos varios Slimes en la Escena. Asi que vamos a empezar a programar a los Slimes.
+      <br>
+      La Física General del Slime será la misma que la del Player. El resto de las solapas de la Física no las tocamos.
+      <br>
+      Pertenecera al Grupo de Colisión de los Actors. Que colisionarán con todos los grupos incluso con ellos mismos. Recordemos que los grupos están 
+      en Settings/Grupos.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-24.png" width="50%" alt=""></p>
+
+     <p class="texto">    
+      Comenzaremos con los Eventos del Slime:
+      <br>
+      - Created: Crearemos un Atributo de "Vidas" que serán 2. Son variables para cada uno de los Slimes.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-25.png" width="20%" alt=""></p>
+
+     <p class="texto">    
+      - Updating: Necesitamos otro Atributo de "Direccion Slimes". Será un número aleatorio entre 1 y 4 que cambiara la x-speed ó 
+      la y-speed del Slime cada cierto tiempo.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-26.png" width="40%" alt=""></p>
+
+     <p class="nota">    
+      No poner acentos en los atributos, animaciones....... Puede haber problemas.
+     </p>
+
+     <p class="texto">    
+      - Actor-Type: Cuando el Slime es golpeado por el Fireball.
+      <br>&ensp;&ensp; 
+       - Destruimos el Fireball.
+       <br>&ensp;&ensp; 
+       - Necesitamos un Atributo "Vidas del slime" que le restaremos.
+       <br>&ensp;&ensp; 
+       - Si Vidas del slime es 1 teñimos al Slime de rojo.
+       <br>&ensp;&ensp; 
+       - Y si es 0 se destruira el Slime.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-27.png" width="70%" alt=""></p>
+
+     <p class="texto">    
+      Ahora que tenemos el Slime programado nos faltaria hacer en el Player que nos quite vidas si nos golpea el Slime. Necesitaremos ir
+      al Player y crear un Evento de tipo "Actor-Group"
+      <br>&ensp;&ensp; 
+      - Tenemos otro Atributo del Juego "Golpe" que será booleano. Y estará a falso al principio.
+      <br>&ensp;&ensp; 
+      - Si se ha golpeado y es falso se pondrá a verdadero y le quitara 1 vida al Player.
+      <br>&ensp;&ensp; 
+      - Y al cabo de 1 segundo volvera a dejar el Atributo Golpe a falso por si se vuelve a chocar de nuevo.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-28.png" width="70%" alt=""></p>
+
+     <p class="texto">    
+      Vamos a terminar los Eventos del Nivel 1 y luego haremos las dos Conductas que necesitamos.
+      <br>
+      Eventos Nivel 1:
+      <br>&ensp;&ensp; 
+      - Created: Inicializamos un Atributo del juego "Puerta abierta" a falso.
+    </p>
+     <p class="img_centrada"><img src="img/actividad3/3-29.png" width="30%" alt=""></p>
+
+     <p class="texto">    
+      &ensp;&ensp; 
+      - Drawing: Crearemos fuente de color blanco para que se vea mejor y mostraremos los Enemigos/Interruptores si hay y las vidas del Player.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-30.png" width="50%" alt=""></p>
+
+     <p class="texto">    
+      &ensp;&ensp; 
+      - Enters Region: Cuando el Player entra en una Región pasara al siguiente  Nivel
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-31.png" width="80%" alt=""></p>
+
+     <p class="nota">    
+      Los Eventos del Nivel 1 serán iguales que los del resto de los Niveles excepto que el Evento Drawing tendrá que mostrar el número
+      de Interruptores que tiene y cuando entra en una Región ira al siguiente nivel.
+     </p>
+
+     <p class="texto">    
+      Nos faltaria hacer las conductas que las tendrán en cada uno de los Niveles que hagamos. Serán Conductas para las Escenas.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-32.png" width="20%" alt=""></p>
+
+     <p class="nota">    
+      Para incluirlas en los Niveles abrimos las Escenas y en la pestaña de "Conductas" las agregamos dando a un botón que está en la parte
+      de abajo a la izquierda.
+     </p>
+
+     <p class="texto">    
+      Conducta "Contar Personajes"
+     <br>
+       Para crear la Conducta vamos a la solapa de "Central del juego" y vamos a CONDUCTAS/Para escenas.
+       <br>
+       Conducta Contar Personajes. Tendrá dos Eventos:
+       <br>&ensp;&ensp; 
+       - Created: Donde contaremos todas las entidades que pertenezcan al grupo de los "Actores". Le sumaremos al atributo "Slimes". Y 
+       haremos lo mismo para los Interruptores que pertenezcan al grupo de "Interruptor" sumandole al atributo "Interruptor". Estos
+       atributos los mostraremos en el Evento Drawing de las Escenas.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-33.png" width="50%" alt=""></p>
+
+     <p class="texto">    
+      &ensp;&ensp; 
+      - Actor Created: Cuando el Slime es destruido restara 1 al Atributo del juego "Slimes"
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-34.png" width="50%" alt=""></p>
+
+     <p class="texto">    
+      Conducta "Deslizar Puerta"
+      <br>
+        Para crear la Conducta vamos a la solapa de "Central del juego" y vamos a CONDUCTAS/Para escenas.
+        <br>
+        Conducta Deslizar Puerta. Tenemos que pasarle unos atributos: 
+        <br>&ensp;&ensp; 
+        - Puerta Entrada y Puerta Salida serán un atributos de tipo Entidad. Para saber que entidad se tiene que abrir/cerrar en cada Nivel.
+         ¡Estos atributos se crean dentro de la Conducta.
+         <br>&ensp;&ensp; 
+        - Posicion a deslizar Puerta Entrada y Posicion a deslizar Puerta Salida serán un atributos de tipo Númerico. Para saber cuanto se tiene que
+        deslizaren cada Nivel. Estos atributos se crean dentro de la Conducta.
+        <br>&ensp;&ensp; 
+        - Deslizar Derecha Puerta Entrada será un atributo de tipo booleano. Para saber hacia donde tengo que deslizar la Puerta.
+      </p>
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-35.png" width="50%" alt=""></p>
+
+     <p class="nota">    
+      En este ejemplo solo he usado estos atributos. Se pueden usar más o menos dependiendo las necesidades del juego.
+     </p>
+
+     <p class="texto">    
+      Conducta Deslizar Puerta. Tenemos 3 Eventos: 
+      <br>&ensp;&ensp; 
+        - Created: Hacemos un sonido "Puerta" nada más entrar en el Nivel para que se cierre. Inicializar Atributo del juego "Puerta abierta" a falso para
+         saber que se ha cerrado. Y al cabo de unos segundo la Puerta Entrada se deslizara hacia la derecha o a la izquierda dependiendo de un parámetro boleano.
+         Para el sonido usaremos canales para no pisar el sonido de fondo del juego.
+      </p>
+     <p class="img_centrada"><img src="img/actividad3/3-36.png" width="80%" alt=""></p>
+     <p class="img_centrada"><img src="img/actividad3/3-37.png" width="80%" alt=""></p>
+
+     <p class="texto">    
+      <br>&ensp;&ensp; 
+      - Updating Deslizar: Si no esta la "Puerta abierta" y has pisado todos los Interruptores y no hay Slimes abriremos la puerta de Salida que esta como oculta. Y 
+      volvemos a dejar el Atributo del juego "Puerta abierta" a verdadero para usarlo en el siguiente nivel. 
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-38.png" width="85%" alt=""></p>
+
+     <p class="texto">    
+      <br>&ensp;&ensp; 
+       - Updating Sonido: Si no esta la "Puerta abierta" y has pisado todos los Interruptores y no hay Slimes sonara el sonido. Lo hacemos aparte para que el 
+       deslizar de la puerta y el sonido se haga a la vez.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-39.png" width="50%" alt=""></p>
+     <p class="texto">    
+      Faltaria hacer los interruptores...Explicaremos solo el Interruptor suelo, ya que funcionan de la misma manera.
+      <br>
+      - Tendrán 2 sprites en activo y el desactivado. Pondremos el Desactivado al comenzar el juego.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-40.png" width="20%" alt=""></p>
+
+     <p class="texto">    
+      - Tendra un Evento Actor-Type y cuando golpea al Player restara al Atributo del juego "Interruptor" y cambiaremos su animación a "Activo".
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-41.png" width="70%" alt=""></p>
+
+     <p class="texto">    
+      - La animación "Activo" no tendra colisión pero "Desactivado" si tiene colisión.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-42.png" width="20%" alt=""></p>
+     <p class="img_centrada"><img src="img/actividad3/3-43.png" width="20%" alt=""></p>
+
+     <p class="texto">    
+      - La Física del Interruptor solamente pondremos que no se pueda mover.
+      </p>
+     <p class="img_centrada"><img src="img/actividad3/3-44.png" width="30%" alt=""></p>
+
+     <p class="texto">    
+      - Y en Propiedades le ponemos que pertenezcan al Grupo de Colisuón de "Interruptor". Y colisiona con Players y Actors.
+      </p>
+     <p class="img_centrada"><img src="img/actividad3/3-45.png" width="50%" alt=""></p>
+     <p class="img_centrada"><img src="img/actividad3/3-46.png" width="50%" alt=""></p>
+
+     <h4>Sonidos</h4>
+     <p class="texto">    
+      Tenemos 3 Sonidos. 
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-47.png" width="40%" alt=""></p>
+
+     <h4>Fuente</h4>
+     <p class="texto">    
+      Creamos una fuente para poder mostrar las vidas, enemigos e interruptores en cada escena.
+     </p>
+     <p class="img_centrada"><img src="img/actividad3/3-48.png" width="40%" alt=""></p>
+
+
+
+
+<!-- 
+      <p class="texto">    
+         Y el juego quedaría así.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-51.gif" width="50%" alt=""></p>
+      <p class="texto">
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/899419564/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/1-NosMovemos.sb3">aquí</a>.
+      </p>
+ -->
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>

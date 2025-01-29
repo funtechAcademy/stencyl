@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Arkanoid</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Arkanoid</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Arkanoid</h2>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/2-Arkanoid.zip" download="Arkanoid"> link</a>. Es un archivo comprimido con 8 objetos y un 
+         sonido. Lo descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
+      <p class="texto">
+         1º - Escena con el fondo y las tiles en los laterales y en la parte de arriba.
+         <br><br>
+         2º - Los bloques se crearan desde el Escenario y serán clones. Hacerlo de una forma eficiente pudiendose añadir un Custom Event 
+         para no repetir tanto código. 
+         <br><br>
+         3º - Paddle se moverá de izquierda a derecha con las flechas sin sobrepasar las tiles.
+         <br><br>
+         4º - La pelota se lanzara con el espacio e ira desde el paddle hacia arriba rebotando tanto con los bloques, tiles y el paddle. Tendremos solo 3 vidas. 
+         Y habra solo una pelota en la escena.
+         <br><br>
+         5º - Los bloques tendrán 2 vidas cambiando de color y cuando se eliminen puntuara.
+         <br><br>
+         5º - En el escenario habrá que poner la vida que tenemos y los puntos. Para ello crearemos una nueva fuente.
+         <br><br>
+         6º - Mostraremos un mensaje de "Game Over" si hemos perdido ó "You Win" si hemos ganado.
+         <br><br>
+         7º - Agregar el sonido cuando la pelota rebota con el bloque.
+       </p>
+
+       <h2>Retos</h2>
+       <p class="texto">
+         - Que se puedan tener más pelotas a la vez.
+         <br>
+         - Que cuando ya no tenga vidas que se vuelva a recargar la escena y vuelva a empezar el juego.
+       </p>
+
+
+
+       
+
+
+<!-- 
+      <p class="texto">    
+         Y el juego quedaría así.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-51.gif" width="50%" alt=""></p>
+      <p class="texto">
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/899419564/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/1-NosMovemos.sb3">aquí</a>.
+      </p>
+ -->
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
