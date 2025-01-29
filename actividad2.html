@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Arkanoid</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Arkanoid</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Arkanoid</h2>
+      <p class="texto">
+         El Arkanoid es un divertido que exige unos reflejos rápidos. Usa física, colisiones y efectos especiales para entretener al jugador. 
+      </p>
+
+      <h3>Objetos Necesarios</h3>
+      <h4>Paddle</h4>
+      <p class="texto">
+         Se moverá de izquierda a derecha y no podrá atravesar las paredes.
+      </p>
+      <h4>Ball</h4>
+      <p class="texto">
+         El Ball rebotará en el Paddle, los bloques y las tiles.
+      </p>
+      <h4>Green Block</h4>
+      <p class="texto">
+         Los Bloques que cambiarán de color y harán un sonido cuando la bola colisione con ellas. Y si le damos una segunda vez se eliminara el bloque y 
+         puntuara.
+      </p>
+
+      <h4>Escenarios</h4>
+      <p class="texto">
+         El Escenario tendrá 2 capas. La 0 sera donde dibujaremos el borde con la tiles y el Background que pondremos el fondo que tenemos en el juego.
+      </p>
+
+      <p class="nota">
+         Siempre tiene que estar la capa 0 en la primera posición empezando por arriba, ya que es donde dibujaremos y añadiremos nuestras Entidades. Para 
+         poder hacerlo tiene que estar seleccionada la capa 0.
+      </p>
+   
+      <h3>Paso A Paso</h3>
+      <p class="texto">
+         El juego consiste en que el Paddle se moverá con las flechas derecha e izquierda sin que sobrepase los bordes.
+         <br>
+         La pelota empezara a moverse cuando presionemos la tecla espacio e ira rebotando con el Paddle, Bloque y Tiles. Tendremos 3 pelotas disponibles
+         para poder jugar. Solo podra salir otra pelota cuando la anterior haya salido de la escena.
+         <br>
+         Los Bloques tendrán 2 vidas. La primera vez que le de la pelota cambiara de color y la segunda vez se eliminara el Bloque y puntuara.
+         <br>
+         El Juego terminara cuando ya no tengamos más vidas o cuando hallamos acabado con todos los bloques. Y pondremos una entidad de "Game Over" ó
+         "You Win".
+      </p>
+
+     <h4>Escenario</h4>
+      <p class="texto">    
+         Creamos un Escenario con la anchura y altura que ponga por defecto (El alumno la podra hacer más grande si quiere).
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-1.png" width="25%" alt=""></p>
+
+      <p class="texto">    
+         Lo primero que necesitamos son las Tiles y el Fondo (para poder ponerlas en el Escenario), asi que tendremos que añadir al proyecto dentro de
+         Fondos y Set de baldosas.
+      </p>
+
+      <p class="texto">    
+         Para añadir el Fondo damos a Biblioteca/Fondos y damos al botón.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-2.png" width="15%" alt=""></p>
+
+      <p class="texto">    
+         Tenemos que dar al botón que aparece en la izquierda de "Pulsa para añadir un fotograma".
+         <br>
+         Escala 1 y seleccionar la imagen "New bricks.png" en el directorio donde esten los Sprites, Sonidos...
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-3.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad2/2-4.png" width="0%" alt=""></p>
+     
+      <p class="texto">    
+         Nos faltaria añadir el Set de baldosas damos a Biblioteca/Set de baldosas y damos al botón.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-5.png" width="15%" alt=""></p>
+      <p class="texto">    
+        Le ponemos un nombre.
+      <br>
+         Escala 1 y seleccionar la imagen "Bricks.png" en el directorio donde esten los Sprites, Sonidos...
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-6.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad2/2-7.png" width="50%" alt=""></p>
+
+      <p class="texto">    
+         Una vez que tengamos el Fondo y la Baldosas ya podemos crear nuestro Escenario. Y colocamos la entidad Paddle.
+      </p>
+       <p class="img_centrada"><img src="img/actividad2/2-8.png" width="40%" alt=""></p>
+    
+       <p class="texto">    
+         Para poder crear los Bloques lo haremos desde el Evento "Created" del Escenario.
+         <br>
+         - Necesitamos varios Atributos (serán locales): Puntos, PosicionX, PosicionX Inicial, PosicionY y Repetir (todos son de tipo númerico)
+         <br>
+         - También tenemos que crear unos Atributos del juego: Esperar y Juego Terminado (ambos Booleanos inicializados a Falso), numero bloques, numero bloques 
+         eliminados, Vidas (de tipo númerico)
+         <br>
+         - Al comienzo del juego inicializar numero bloques, numero bloques eliminados y Puntos a 0. Y Vidas a 3.
+         <br>
+         - Los podemos crear de muchas maneras una de ellas es utilizando el repetir y mandando un Custom Event que es que crea el Bloque, inicializando
+         las variables de Puntos, Repetir, PosicionX, PosicionY, PosicionX Inicial (por cada fila) y sumando al numero de bloques los bloques que creamos.
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-9.png" width="40%" alt=""></p>
+
+       <p class="texto">    
+         Recordar que tenemos que agregar la entidad de "Green Block" antes de poder hacer algo con ella.  Escala 1 y seleccionar la imagen "Green Block.png".
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-10.png" width="40%" alt=""></p>
+       <p class="texto">    
+         Quedaría algo como esto:
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-11.png" width="40%" alt=""></p>
+ 
+       <p class="texto">    
+         Crearemos un grupo de Colision llamado "Bloques" que solo colisionara con el grupo de Colisión "Pelota" que lo tendrá asignado la pelota. Y se 
+         lo pondremos a la entidad "Green Block".
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-12.png" width="60%" alt=""></p>
+
+       <p class="texto">    
+         Añadir un nuevo Evento en el Escenario de "Actor Created" para que cuando se elimine una entidad que pertenezca al Grupo de los Bloques se 
+         sumen los Puntos.
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-13.png" width="60%" alt=""></p>
+
+       <p class="texto">    
+         Y necesitamos otro Evento de Drawing para mostrar los Puntos y las Vidas pero con una fuente que creemos en Central del juego/Fuente.
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-14.png" width="60%" alt=""></p>
+
+       <p class="nota">    
+         Faltaria hacer algo mñas en la entidad Geen Block pero lo veremos más adelante.
+      </p>
+
+      <h4>Paddle</h4>
+      <p class="texto">    
+         Para crear una entidad daremos al botón, le ponemos un nombre y daremos al botón de crear.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-15.png" width="15%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad2/2-16.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+        Nos aparece una ventana que nos dice que no tenemos animaciones, asi que le damos al botón para añadir una animación. 
+        <br>
+        Pulsamos el botón para añadir un fotograma.
+        <br>
+        Escala 1 y seleccionar la imagen "Paddle.png". Le cambiamos el nombre de la animación (Siempre sin acentos).
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-17.png" width="15%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad2/2-18.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+        Ahora comenzaremos con la programación del Paddle.
+        <br>
+        Tendremos 2 Atributos del Juego (Globales), Vidas que será númerico y Juego Terminado que será un booleano (verdadero/falso).
+        <br><br>
+        Añadir un Evento Basics/When Updating para el movimiento.
+        <br>
+        - Si Vidas es 0 o Juego Terminado es verdadero ponemos el "x-speed" a 0 para que no se mueva.
+        <br>
+        - Y si Vidas es mayor que 0 hacemos que se mueva.
+        <br>
+        - Si le damos la tecla izquierda movemos x-speed en negativo.
+        <br>
+        - Si le damos la tecla derecha movemos x-speed en positivo.
+        <br>
+        - Y si no damos ni a la tecla derecha ni a la izquierda lo ponemos a 0 para que deje de moverse el Paddle.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-19.png" width="70%" alt=""></p>
+
+      <p class="nota">
+         A la hora de poner bloques si no queremos ese bloque podemos arrastrarlo a la basura que esta arriba a la derecha ó podemos dar click derecho
+         (aparecerán más opciones para hacer más cosas interesantes).
+        </p>
+
+      <p class="texto">    
+        Añadir otro Evento Basics/When Updating para que el Paddle no sobrepase los lados.
+        <br>
+        - Si la posición X del Paddle es menor a la anchura del tile igualo su X a la anchura de la tile.
+        <br>
+        - Y si la posición X + su anchura es mayor que anchura de la escena menos la anchura del tile igual su X a anchura de la escena menos
+         la anchura del tile.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-20.png" width="80%" alt=""></p>
+
+      <p class="texto">    
+        Pondremos su colisión.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-21.png" width="15%" alt=""></p>
+
+      <p class="texto">    
+        En la Fisica. No se puede empujar y no podrá rotar.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-22.png" width="40%" alt=""></p>
+
+      <p class="texto">     
+        Y pondremos que pertenezca al grupo de los Players. Que en Settings/Grupos de colisión los Players colisionaran con la "Tiles" y con un grupo que 
+        creemos que sera "Pelota" que lo añadiremos a nuestra ball.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-23.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad2/2-24.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+        Nos faltaria crear una Conducta que se llame "Lanzar Pelota". Para ello vamos Central del juego/Conductas y como la vamos añadir a una entidad,
+        la conducta será "Para entidades". Creamos la conducta y le ponemos su nombre.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-25.png" width="30%" alt=""></p>
+      <p class="nota">
+        Las conductas las podemos exportar para poder utilizarla en otro proyecto e incluso podemos tener "Atributos" para poder pasar valores como: tipo de 
+        entidades, ángulo....... En nuestro caso estas variables las tengo ocultas porque no las voy a necesitar.
+        <br>
+        Las podemos encontrar en la parte de la derecha de nuestra conducta. Paleta serán los bloques de programación, Atributos estarán los atributos que 
+        queremos pasar por parámetro. Y en Favoritos podemos tener bloques favoritos asignados.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-26.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad2/2-27.png" width="30%" alt=""></p>
+
+      <p class="texto">    
+         Una vez creada tenemos que añadir la Conducta "Lanzar Pelota" a la entidad "Paddle". Dentro de las Conductas del Paddle hay un botón que
+         aparece a la abajo a la izquierda. Le damos y nos aparece otra ventana para seleccionar la conducta.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-28.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad2/2-29.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad2/2-30.png" width="85%" alt=""></p>
+
+      <p class="texto">    
+        Ahora vamos a programar la conducta "Lanzar Pelota". Damos al botón de "Editar Conducta".
+        <br>
+        - Tenemos que agregar la entidad de "Ball". Escala 1 y seleccionar la imagen "Ball.png"
+        <br>
+        - La pelota se lanzara con el botón del Espacio. Para ello necesito crear en Setting/Controles una nueva tecla.
+        <br>
+        - Crear un nuevo evento Input/Universal/Keyboard y seleccionamos el botón nuevo que hemos creado.
+        <br>
+        - Usaremos el atributo Vidas para poder lanzar una nueva pelota y otro atributo Esperar que sera booleano que hasta que la pelota anterior no halla
+        desaparecido de la escena no pueda volver a lanzar otra pelota.
+        <br>
+        - Deje otro bloque pero no está enganchado para que si quieren podríamos hacer que tuvieramos varias pelotas a la vez.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-31.png" width="80%" alt=""></p>
+
+      <h4>Green Block</h4>
+      <p class="texto">    
+        Los Bloques los creamos en el Evento Created de la Escena. Pero aún nos falta hacer algunas cosillas.
+        <br>
+        Tendrá 2 Eventos: 
+        <br>
+        - Created para inicilizar el atributo "Tocar ladrillo" la inicializamos a 2 ya que solo se pueden tocar 2 veces y se eliminaran.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-32.png" width="30%" alt=""></p>
+
+      <p class="texto">    
+        - Actor Type para si el bloque golpea a la pelota y si el atributo "Tocar ladrillo" es 2 cambia su color y reproducir el sonido.
+        <br>
+        - Y si le vuelve a dar reproducir el sonido, sumamos al atributo "numero bloques eliminados" y si ya no tenemos más bloques mostraremos 
+        la entidad de "You Win". Asi que habra que crear una entidad de You Win pero con la Escala 4.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-33.png" width="70%" alt=""></p>
+      <p class="texto">    
+        El Bloque también tendrá su colisión.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-34.png" width="15%" alt=""></p>
+
+      <p class="texto">    
+        En la solapa de Física NO se podrá mover. El resto lo dejamos como está.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-35.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+        Y en Propiedades ponemos a que grupo de Colisión pertenece. Y en Grupos de Colisión pondremos con que grupo colisiona el Bloque.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-36.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad2/2-37.png" width="50%" alt=""></p>
+
+      <h4>Ball</h4>
+      <p class="texto">    
+         Crear una nueva entidad con Escala 1 y seleccionar la imagen "Ball.png". La Pelota tendrá dos Eventos:
+         <br>
+         - Updating que comprobara mediante un Atributo del juego si "Juego Terminado" y destruye la entidad para que no se quede rebotando si ha 
+         terminado el juego.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-38.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+        - El Evento que usaremos está en: Actors/Enters or Leaves the Scene or Screen/Actor of Type. Seleccionamos el ball y que se active cuando salga de
+        la Escena.
+        <br>
+        Le restaremos una vida y si es 0 centramos la entidad de "Game Over" que la pondremos con una Escala de 4. 
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-39.png" width="70%" alt=""></p>
+
+      <p class="texto">    
+        - He puesto otro Evento que no está activo. Lo que hace es volver a reiniciar la escena cuando ya no tenga vidas. (Por si quereis probarlo)
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-40.png" width="70%" alt=""></p>
+
+       <p class="texto">    
+        El Ball tiene que tener una colisión.
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-41.png" width="15%" alt=""></p>
+
+       <p class="texto">    
+         En la solapa de Física tenemos que dejar que se mueva, que no pueda rotar y que no tenga gravedad.
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-42.png" width="50%" alt=""></p>
+
+       <p class="texto">    
+        En la solapa de Peso.
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-43.png" width="40%" alt=""></p>
+
+       <p class="texto">    
+         En la solapa de Material. La Elasticidad sera a 1 para que la pelota rebote.
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-44.png" width="60%" alt=""></p>
+
+       <p class="texto">    
+         Y en Propiedades ponemos a que grupo de Colisión pertenece. Y en Grupos de Colisión pondremos con que grupo colisiona la Pelota.
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-45.png" width="20%" alt=""></p>
+       <p class="img_centrada"><img src="img/actividad2/2-46.png" width="60%" alt=""></p>
+ 
+
+       <h4>Sonidos</h4>
+       <p class="texto">    
+        Tenemos que añadir el sonido del golpe de la pelota sobre los bloques. 
+        - Vamos a Sonidos y damos al botón.
+       </p>
+       <p class="img_centrada"><img src="img/actividad2/2-47.png" width="15%" alt=""></p>
+
+       <p class="texto">    
+         - Y damos de nuevo al botón de "Import MP3". Y seleccionamos el sonido "Hit.mp3". Para poder probarlo vamos donde pone Reproducción y le damos al botón..
+        </p>
+        <p class="img_centrada"><img src="img/actividad2/2-48.png" width="20%" alt=""></p>
+        <p class="img_centrada"><img src="img/actividad2/2-49.png" width="20%" alt=""></p>
+
+
+
+
+<!-- 
+      <p class="texto">    
+         Y el juego quedaría así.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-51.gif" width="50%" alt=""></p>
+      <p class="texto">
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/899419564/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/1-NosMovemos.sb3">aquí</a>.
+      </p>
+ -->
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
