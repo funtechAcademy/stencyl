@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Flappy Bird</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Flappy Bird</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <p class="texto">
+        <br>
+         El Flappy Bird es un juego donde el pájaro tiene que esquivar las Pipes que se van generando y moviendose hacia la izquierda
+         y de arriba abajo. Si las esquiva logrará puntos pero si se da con ellas le quitará vidas.
+      </p>
+
+      <h3>Objetos Necesarios</h3>
+      <h4>Flappy Bird</h4>
+      <p class="texto">
+         Se movera con el click del ratón hacia arriba y con la gravedad de la escena bajara.
+      </p>
+      <h4>Ground</h4>
+      <p class="texto">
+         Es el Ground que se ira generando constantemente y se movera hacia la izquierda.
+      </p>
+      <h4>Pipes</h4>
+      <p class="texto">
+         Aparecerán por la derecha cada cierto tiempo en posiciones aleatorias de "Y" y subiendo y bajando un poco para que sea más dificil el juego 
+         y se moveran hacia la izquierda. 
+      </p>
+      <h4>Botón Play</h4>
+      <p class="texto">
+         Recarga de nuevo el Juego cuando nos quedemos sin vidas.
+      </p>
+      <h4>Game Over</h4>
+      <p class="texto">
+         Es una entidad que solo se mostrara cuando no quedemos sin vidas al igual que el botón Play.
+      </p>
+
+      <h4>Instructions</h4>
+      <p class="texto">
+         Simplemente se mostrara al principio del juego junto con el Flappy Bird y cuando volvamos a empezar el juego tras perder una vida y se destruira.
+      </p>
+      
+      <p class="nota">
+         Haremos conductas para todas las entidades y usaremos un nuevo bloque muy parecido al enviar de Scratch.
+      </p>
+   
+      <h3>Paso A Paso</h3>
+      <p class="texto">
+         El juego consiste en que el Flappy Bird tiene que sobrepasar las Pipes sumando puntos e intentar no chocar con las 
+         Pipes para que no nos quiten vidas.
+        <br>
+        Tendrá 3 vidas y cuando ya no tengamos más vidas aparecera el "Game Over" y el botón de "Play".
+        <br>
+         Pondremos sonidos de Die (quita vidas), Hit (cuando se choca con la Pipe) y Point (suma puntos).
+         <br>
+         El tamaño del juego será de:
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-1.png" width="30%" alt=""></p>
+
+     <h4>Escenario</h4>
+      <p class="texto"> 
+         El tamaño del Escenario será Anchura 10 y Altura 15.   
+         Necesitamos crear un fondo, lo seleccionamos donde tengamos los recursos del Flappy Bird/BackGround con la escala 4.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-2.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         El Flappy Bird tenemos también que seleccionarlo con escala 1 pero antes de elegir la imagen tenemos que poner en Columnas 2 y Filas 2.
+         Ya que están las animaciones en el mismo Sprite FlappyBird.png y tenemos que separarlas. 
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-3.png" width="50%" alt=""></p>
+      
+
+      <p class="texto">    
+        Las Instrucciones la seleccionamos pero con la escala a 1. No hace falta que tenga colisiones. Para borrarla simplemente tenemos que 
+        entrar en la solapa de Colisiones y dar a retroceder en el teclado y desaparecera. Y en la solapa de Fisícas no se podrá mover. Y 
+        pertenecera al grupo de las "Doodads" que no puede colisionar con nada (Ya está definida en los Grupos de Colisión). 
+        <br>
+         Y nos quedaría por poner el Ground con escala 1, pero ponemos 2 entidades ya que tendremos que ir generandolo continuamente.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-4.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         En Físicas del Escenario pondremos una gravedad vertical para que el Flappy caiga.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-5.png" width="30%" alt=""></p>
+
+      <h4>Entidad Intructions</h4>
+      <p class="texto">    
+         Para comenzar el juego daremos un click encima de la entidad "Intructions". Para ello crearemos una conducta llamado "InstruccionesBehaviour". 
+         Este conducta para crearla vamos a Central Juego/CONDUCTAS/Para entidades ya que se la asignaremos a una entidad.
+         <br>
+         Está conducta simplemente tendrá un Evento de "Click" y cuando hagamos un click en cualquier parte de juego se destruira y comenzaremos a jugar.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-6.png" width="45%" alt=""></p>
+
+      <p class="texto">    
+         Para asignarsela a una entidad, seleccionamos la entidad y en la solapa de "Conductas" se la añadimos con el botón de "+ Añadir conducta" situado 
+         en la parte baja.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-7.png" width="30%" alt=""></p>
+
+      <h4>Entidad Flappy Bird</h4>
+      <p class="texto">    
+         El Flappy Bird también tendrá su conducta "BirdBehaviour". Asignársela al Flappy como hicimos anteriormente.
+         <br>
+         En la conducta tendremos varios Eventos:
+         <br>
+         - Evento Created: Desactivar su gravedad y que siempre este activo.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-8.png" width="45%" alt=""></p>
+
+      <p class="texto">    
+         - Evento Click: Con el click que hemos dado antes en el juego se activara también este evento del Flappy para que se active la gravedad y se 
+         empiecen a generar Pipes. Todo esto lo hara siempre que el Flappy este vivo con el atributo del juego "Dead" y también necesito otro atributo "Jugando" 
+         para que active la gravedad y empiece a generar las Pipes mediante un evento que estará en la conducta de la escena.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-9.png" width="50%" alt=""></p>
+
+      <p class="nota">    
+         El evento de "GenerarPipes" que estárá en la conducta "SceneBehaviour" la haremos más adelante.
+       </p>
+
+      <p class="texto">    
+         Necesitare también quitar el y-speed cuando sea mayor a 0. Y que el Flappy se mueva con el bloque de "presionar" con unos grados y fuerza 
+         determinados.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-10.png" width="50%" alt=""></p>
+
+      <p class="texto">    
+         Evento Updated: Para que cuando suelto el click mira hacia abajo. Y siempre pondremos la posición X para que no se retrase
+         a la hora de pasar entre las Pipes y haga el sonido siempre que este vivo.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-11.png" width="50%" alt=""></p>
+
+       <h4>Entidad Pipes</h4>
+       <p class="texto">    
+         Tenemos que cargar la imagen de "Pipe.png" con una escala de 4. Tiene que tener 3 colisiones:
+         <br>
+         - Una colisión en cada Pipe para cuando choque el Flappy le quite 1 vida.
+         <br>
+         - Y una central para sumar puntos cuando el Flappy lo atraviese.
+       </p>
+       <p class="img_centrada"><img src="img/actividad4/4-12.png" width="20%" alt=""></p>
+
+       <p class="texto">    
+         En la solapa de Física pondremos lo siguiente. Que no pueda ser empujado y que no rote.
+       </p>
+       <p class="img_centrada"><img src="img/actividad4/4-13.png" width="50%" alt=""></p>
+
+       <p class="texto">    
+         En Propiedades tenemos que poner a que grupo de colisión pertenece "Pipes". Y solo colisionara con el Flappy que pertenece
+         al grupo de colisión de "Players".
+       </p>
+       <p class="img_centrada"><img src="img/actividad4/4-14.png" width="60%" alt=""></p>
+       <p class="img_centrada"><img src="img/actividad4/4-15.png" width="60%" alt=""></p>
+
+       <p class="texto">    
+         Necesitamos hacer otro grupo de colisión "PipesColision". Que se lo pondremos a la colisión que tenemos entre las Pipes para 
+         que sumemos los puntos. En la solapa de Colisión tenemos que seleccionar la colisión del medio y chequear "sensor" para que podamos
+         atravesarlo.
+       </p>
+       <p class="img_centrada"><img src="img/actividad4/4-16.png" width="25%" alt=""></p>
+
+      <p class="texto">
+         Una vez que ya tenemos el Pipe ya podemos hacer la llamada para "CrearPipes". Asi que creamos la conducta "SceneBehaviour" desde:
+         Central del juego/CONDUCTAS/Para escenas. Y hacemos un click en el botón y nos aparecera una ventana para poner el nombre de la conducta.
+         <br>
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-17.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad4/4-18.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         Tenemos que añadir está conducta a la Escena. Creamos un evento:
+         <br><br>
+         - Evento Advanced/Custom Event
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-19.png" width="45%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad4/4-20.png" width="45%" alt=""></p>
+
+      <p class="texto">    
+         Pondremos el nombre "GenerarPipes". Se crearan a diferente altura aleatoriamente. Y se generara cada cierto tiempo.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-21.png" width="70%" alt=""></p>
+
+
+      <p class="texto">    
+         Las Pipes se tienen que mover hacia la izquierda. Para ello hacemos una nueva conducta de tipo entidad llamada "PipeBehaviour" que la 
+         creamos desde: Central del juego/CONDUCTAS/Para entidades. 
+         <br>
+         - Evento Created: Lo primero que haremos en esta conducta es:
+         <br>
+         &nbsp&nbsp&nbsp- Que siempre se este moviendo la Pipe aunque no la vea.
+         <br>
+         &nbsp&nbsp&nbsp- Que se cree por detrá para que aparezca por detrás del Ground.
+         <br>
+         &nbsp&nbsp&nbsp- Le daremos una x-speed en negativo para que se mueva hacia la izquierda.
+         <br>
+         &nbsp&nbsp&nbsp- Y crearemos un Atributo "Altura" para que se mueva hacia arriba y hacia abajo.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-22.png" width="45%" alt=""></p>
+
+      <p class="texto">    
+         - Evento Update: Cuando llegan a una determinada posición o si está muerto se destruira la Pipe.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-23.png" width="45%" alt=""></p>
+
+      <p class="texto">    
+         - Evento Update: Hacemos que este continuamente moviendose poniendo el Atributo "Altura".
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-24.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         - Evento Every N secs: Cada cierto tiempo cambiara el atributo "Altura". Para que las Pipes se muevan de arriba abajo continuamente.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-25.png" width="45%" alt=""></p>
+
+      <p class="texto">    
+         - Evento Group-Group: Cuando el grupo de colisión "PipeColision" colisiona con el grupo de colision "Players" que lo tiene 
+         el Flappy sumara puntos.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-26.png" width="70%" alt=""></p>
+
+
+      <h4>Conducta BirdBehaviour</h4>
+      <p class="texto">    
+         Nos faltaria hacer dos nuevas colisiones, uno sería con los "Pipes" y otro con "Actors" que es el Ground.
+         <br>
+         - Evento Group-Group: Colisión con Pipe
+         <br> 
+         &nbsp&nbsp&nbsp- Tenemos varios atributos "Dead" para saber si está muerto o no el Flappy y "Quitar Vida" para que solo me quite una vida
+         cada vez que toco a la Pipe ya que sigue tocando durante algún frame hasta que se destruye.
+         <br>
+         &nbsp&nbsp&nbsp- Reproduciremos el sonido "Hit".
+         <br>
+         &nbsp&nbsp&nbsp- Quitaremos 1 vida y si ya no tengo vidas el atributo "Dead" lo ponemos a verdadero y aparecerá la entidad "Game Over", 
+         se destruye el Flappy y se para todo.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-27.png" width="55%" alt=""></p>
+
+      <p class="texto">    
+         - Evento Group-Group: Colisión con Actors y haremos lo mismo que con la colisión anterior.
+         <br> 
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-28.png" width="55%" alt=""></p>
+
+      <h4>Entidad Ground</h4>
+      <p class="texto">    
+         Tenemos que poner la colisión al Ground si no la tuviese.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-29.png" width="30%" alt=""></p>
+
+      <p class="texto">    
+         En la Solapa de Física pondremos que no pueda ser empujado y que no pueda rotar.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-30.png" width="40%" alt=""></p>
+
+      <p class="texto">    
+         Y le ponemos a que grupo de colisión pertenece.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-31.png" width="45%" alt=""></p>
+
+      <p class="texto">    
+         Nos faltaría crear su conducta "GroundBehaviour" para entidades y luego tenemos que añadirlo a Ground. Con dos Eventos:
+         <br>
+         - Evento Created: Haremos que siempre este activo para que se mueva aunque no lo veamos, que se mueva hacia la izquierda.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-32.png" width="45%" alt=""></p>
+
+      <p class="texto">    
+         - Evento Updated: Si no está muerto y si el Ground llega a una determinada posición crearemos otro Ground. Y borraremos el anterior.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-33.png" width="70%" alt=""></p>
+        
+      <h4>Conducta SceneBehaviour</h4>
+      <p class="texto">    
+         Para terminar esta conducta necesitamos varios Eventos:
+         <br>
+         - Evento Created: Usaremos un atributo del juego "Quitar Vida" que ya lo hemos usado en la conducta "BirdBehaviour".
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-34.png" width="30%" alt=""></p>
+
+      <p class="texto">    
+         - Updated: Hacemos que desaparezca la con un color negro y vuelva aparecer cuando el atributo del juego "Quitar Vida" es falso. 
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-35.png" width="70%" alt=""></p>
+
+      <p class="nota">    
+         Se pueden poner otros efectos.
+      </p>
+
+      <p class="texto">    
+         - Custom Event: Hacemos otro evento y lo llamamos "GameOver" para que la entidad Game Over y Play para volver a jugar. Centrandolo
+         en la escena. Con ambas entidades se hace un slide.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-36.png" width="70%" alt=""></p>
+
+      <p class="texto">    
+         - Drawing: Ponemos en la escena las Vidas y los Puntos.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-37.png" width="45%" alt=""></p>
+
+
+      <h4>Entidad Play</h4>
+      <p class="texto">    
+         No hace falta que tenga colisiones. Para borrarla simplemente tenemos que entrar en la solapa de Colisiones y dar a retroceder
+         en el teclado y desaparecera. Y en la solapa de Fisícas no se podrá mover. Y pertenecera al grupo de las "Doodads" que no 
+         puede colisionar con nada (Ya está definida en los Grupos de Colisión). 
+         <br>
+         Tenemos que crear otra conducta "PlayBehaviour" que tendremos que asignarsela al botón de Play y tendrá un evento.
+         <br>
+         - Input/Universal/On Actor: Recarga la escena. Creamos de nuevo al Flappy e inicializamos variables.
+      </p>
+      <p class="img_centrada"><img src="img/actividad4/4-38.png" width="70%" alt=""></p>
+
+<!-- 
+      <p class="texto">    
+         Y el juego quedaría así.
+      </p>
+      <p class="img_centrada"><img src="img/juego1/1-51.gif" width="50%" alt=""></p>
+      <p class="texto">
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/899419564/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/1-NosMovemos.sb3">aquí</a>.
+      </p>
+ -->
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
