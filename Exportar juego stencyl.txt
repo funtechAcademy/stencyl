@@ -1,0 +1,33 @@
+
+1. Exportar el juego desde Stencyl (HTML5)
+Para que el juego funcione en un navegador web moderno, debes exportarlo en formato HTML5, no Flash. 
+Abre tu proyecto en Stencyl.
+Ve a Publish (Publicar) en el menú superior.
+Selecciona Web.
+Elige HTML5 como formato de exportación.
+Stencyl generará una carpeta que contiene un archivo index.html y una subcarpeta (generalmente llamada assets o stencylgame) con los recursos del juego. 
+2. Subir los archivos a un servidor
+Para embeber el juego, necesitas que los archivos exportados estén alojados en un servidor web o en servicios como itch.io o GitHub Pages.
+Sube toda la carpeta exportada a tu servidor.
+Anota la URL directa del archivo index.html (ej. https://tusitio.com).
+3. Embeber el juego en tu HTML (<iframe>) 
+Utiliza la etiqueta <iframe> en tu sitio web para mostrar el juego. 
+
+<iframe 
+    src="URL_DE_TU_JUEGO/index.html" 
+    width="640" 
+    height="480" 
+    frameborder="0" 
+    scrolling="no" 
+    allowfullscreen>
+</iframe>
+
+src: La ruta a tu archivo index.html subido.
+width / height: Ajusta estas medidas según la resolución original de tu escena en Stencyl.
+allowfullscreen: Recomendado para juegos que permitan pantalla completa. 
+Alternativas para compartir
+Stencyl Arcade: Puedes publicar directamente en la arcada de Stencyl y usar el código embebido que proporcionan.
+Itch.io: Es muy popular para subir juegos de Stencyl (HTML5) y obtener un código <iframe> personalizado fácilmente. 
+Nota sobre Flash: Aunque Stencyl permitía publicar en Flash (SWF), los navegadores modernos ya no soportan este formato, por lo que la exportación HTML5 es obligatoria para la web actual. 
+
+

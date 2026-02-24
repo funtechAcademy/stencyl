@@ -1,0 +1,19 @@
+
+
+
+COMO CREAR UNA CONDUCTA
+<p class="texto">
+Aparecerá una ventana para crear la conducta. Siempre utilizaremos el Modo diseño ya que las otras opciones hay que escribir código y al alumno
+le resultara más complicado. 
+<br>
+También podemos seleccionar de que tipo será la conducta: de entidad o de escena.
+<br>
+Y por último ponemos el nombre como pej: Movimiento. Y le damos al botón de "Crear".
+<br>
+En los comportamientos podemos pasarles parámetros como: la dirección de nuetro personaje, la velocidad del movimiento, las animaciones de la entidad......
+<br>
+Haremos algún comportamiento y lo veremos con un poco más de detalle.
+</p>
+<p class="img_centrada"><img src="img/actividad1-2/intro-16.png" width="50%" alt=""></p>
+<p class="img_centrada"><img src="img/actividad1-2/intro-17.png" width="50%" alt=""></p>
+
