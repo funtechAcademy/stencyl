@@ -23,18 +23,30 @@
    <div id="contenido">
       <p class="texto">
         <br>
-         El Plastic Out es un juego de plataformas donde el jugador tendrá que recoger botellas y bolsa de basura para puntuar.
+         El Plastic Out es un juego de plataformas donde el jugador tendrá que recoger botellas y bolsa de basura 
+         para puntuar.
          <br>
-         El jugador podrá disparar para matar a los enemigos. Y podrá pasar a la siguiente Nivel si ha matado a todos los enemigos.
+         El jugador podrá disparar para matar a los enemigos. Y podrá pasar a la siguiente Nivel si ha matado a 
+         todos los enemigos.
          <br>
          Cada nivel tendrá distintos enemigos que se eliminarán de distinta manera.
          <br>
          Tendremos que poner una salida de escape para el siguiente nivel sin que tengamos que matar a los enemigos. 
          <br>
-         El Jugador tendrá 5 vidas que se eliminarán si los enemigos lo han tocado o si se le ha acabado el tiempo para pasar el nivel.
+         El Jugador tendrá 5 vidas que se eliminarán si los enemigos lo han tocado o si se le ha acabado el tiempo
+          para pasar el nivel.
       </p>
 
       <h3>Objetos Necesarios</h3>
+      <p class="texto">
+      <!--Para descargar el Arkanoid 
+         <a href="juegos/Falta por subir.stencyl" download="MiniDungeon"> link</a>. Lo descargaremos en el 
+         directorio del alumno.
+         <br><br>-->
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/6-PlasticOut.zip" download="PlasticOut"> link</a>. Lo descargaremos y lo descomprimimos 
+         en el directorio del alumno.
+			 </p>
       <h4>Player</h4>
       <p class="texto">
          El Player se moverá con la teclas derecha e izquierda y realizara un salto con la flecha hacia arriba.
@@ -54,7 +66,8 @@
 
       <h4>Droppers</h4>
       <p class="texto">
-        La bolsa de basura saldrá de arriba del todo del escenario y caerá siempre delante del Player. Aparecerá de forma aleatoria.
+        La bolsa de basura saldrá de arriba del todo del escenario y caerá siempre delante del Player. Aparecerá de 
+        forma aleatoria.
       </p>
 
       <h4>Elevador Vertical</h4>
@@ -78,9 +91,11 @@
          Seguiran continuamente al Player.
          <br>
 <<<<<<< HEAD
-         Y al eliminarse en uno parecerán fragmentos que será la misma entidad pero más pequeña, otros aparecera Sangre ó Humo.
+         Y al eliminarse en uno parecerán fragmentos que será la misma entidad pero más pequeña, otros aparecera
+          Sangre ó Humo.
 =======
-         Y al eliminarse en uno parecerán fragmentos que será la misma entidad pero más pequeña, otros aparecera blood ó Humo.
+         Y al eliminarse en uno parecerán fragmentos que será la misma entidad pero más pequeña, otros aparecera 
+         blood ó Humo.
 >>>>>>> 1d46426774026ec9751540911c0b0de8864dd9c1
       </p>
 
@@ -98,7 +113,8 @@
       <p class="texto">
          Cuando se destruya el Enemigo pondremos que aparezca el Humo o la Sangre.
 =======
-         Para hacer los fragmentos cogemos cualquier sprite de los enemigos y lo hacemos más pequeño. Solo tendrá un solo sprite.
+         Para hacer los fragmentos cogemos cualquier sprite de los enemigos y lo hacemos más pequeño. Solo tendrá un
+          solo sprite.
 >>>>>>> 1d46426774026ec9751540911c0b0de8864dd9c1
       </p>
 
@@ -126,12 +142,14 @@
 
       <h4>Titulos...</h4>
       <p class="texto">
-         Tenemos varias entidades para poner titulos en las diferentes escenas que tenemos: Enhorabuena, GameOver, Has completado, Titulo Juego.
+         Tenemos varias entidades para poner titulos en las diferentes escenas que tenemos: Enhorabuena, GameOver,
+          Has completado, Titulo Juego.
       </p>
 
       <h4>Fondo Cerca y Fondo Lejos</h4>
       <p class="texto">
-         Tendremos 2 Fondos uno de cerca y otro de lejos y se moverán hacia la izquierda o derecha dependiendo hacia donde se mueva el jugador.
+         Tendremos 2 Fondos uno de cerca y otro de lejos y se moverán hacia la izquierda o derecha dependiendo hacia 
+         donde se mueva el jugador.
       </p>
 
 <<<<<<< HEAD
@@ -158,10 +176,12 @@
       <h3>Paso A Paso</h3>
       <h4>Escenario</h4>
       <p class="texto">
-      Hacemos una Escena que se llame "Nivel1". Tamaño de 640x480 (el que viene por defecto). Aunque luego en propiedades de la Escena aumentaremos
+      Hacemos una Escena que se llame "Nivel1". Tamaño de 640x480 (el que viene por defecto). Aunque luego en 
+      propiedades de la Escena aumentaremos
       su tamaño en Altura y Anchura para que el Nivel sea más largo.
       <br>
-      Añadimos 2 Fondos en Central del juego/Fondos y lo llamaremos Fondo Cerca ("layer-3-first-cactuses.png") y Fondo Lejos
+      Añadimos 2 Fondos en Central del juego/Fondos y lo llamaremos Fondo Cerca ("layer-3-first-cactuses.png") y
+       Fondo Lejos
       ("layer-6-sky.png").
       <br>
       Al Fondo de Cerca le ponemos una Velocidad de desplazamiento horizontal de 15. Y chequeamos el "Repetir fondo".
@@ -169,7 +189,8 @@
       <p class="img_centrada"><img src="img/actividad6/6-1.png" width="25%" alt=""></p>
 
       <p class="texto">
-         Al Fondo de Lejos le ponemos una Velocidad de desplazamiento horizontal de 20. Y chequeamos el "Repetir fondo".
+         Al Fondo de Lejos le ponemos una Velocidad de desplazamiento horizontal de 20. Y chequeamos el "Repetir
+          fondo".
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-2.png" width="25%" alt=""></p>
 
@@ -180,7 +201,8 @@
       <p class="img_centrada"><img src="img/actividad6/6-3.png" width="30%" alt=""></p>
 
       <p class="texto">
-         Y las tenemos que poner en este orden para que aparezcan una encima de la otra. Asi los cactus aparecerán encima del Fondo Lejos.
+         Y las tenemos que poner en este orden para que aparezcan una encima de la otra. Asi los cactus aparecerán
+          encima del Fondo Lejos.
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-4.png" width="30%" alt=""></p>      
 
@@ -240,8 +262,10 @@
 
      <h4>Player</h4>
       <p class="texto"> 
-         Comenzamos a exportar el Idle del Player1. Bilinear para que se vea con mejor resolución. Escala 4 y exportamos todos los sprites
-         de uno en uno de la carpeta de Actor Types/Player/Player1/Idle/frame-1.png....frame-12.png. Lo llamaremos "Idle Right" y lo pondremos como animación 
+         Comenzamos a exportar el Idle del Player1. Bilinear para que se vea con mejor resolución. Escala 4 y 
+         exportamos todos los sprites
+         de uno en uno de la carpeta de Actor Types/Player/Player1/Idle/frame-1.png....frame-12.png. Lo llamaremos
+          "Idle Right" y lo pondremos como animación 
          por defecto con la estrella.
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-10.png" width="70%" alt=""></p>
@@ -251,13 +275,15 @@
       </p>
 
       <p class="texto"> 
-         Creamos otra animación de salta derecha. Bilinear, escala 4 y el sprite de la carpeta de Actor Types/Player/Player1/Jumping/"Jump-right.png".
+         Creamos otra animación de salta derecha. Bilinear, escala 4 y el sprite de la carpeta de 
+         Actor Types/Player/Player1/Jumping/"Jump-right.png".
          Lo llamaremos "Jump Right". Y haremos lo mismo que la anterior para que sea hacia la izquierda.
       </p>
    
       <p class="texto"> 
          Creamos otra animación de correr. Bilinear, escala 4 y exportamos todos los sprites de la carpeta de 
-         Actor Types/Player/Player1/Running/frame-1.png....frame-6.png. Lo llamaremos "Run Right".  Y haremos lo mismo que la anterior 
+         Actor Types/Player/Player1/Running/frame-1.png....frame-6.png. Lo llamaremos "Run Right".  Y haremos lo 
+         mismo que la anterior 
          para que sea hacia la izquierda.
       </p>
 
@@ -305,28 +331,32 @@
 
       <p class="texto"> 
       &ensp;&ensp; 
-      Si el resultado de "Mover" es -1 se moverá hacia la izquierda y si es 1 a la derecha. Le hacemos un presionar con el valor
+      Si el resultado de "Mover" es -1 se moverá hacia la izquierda y si es 1 a la derecha. Le hacemos un presionar
+       con el valor
       "Mover", una dirección Y a 0 y una fuerza.
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-13.png" width="70%" alt=""></p>
 
       <p class="texto"> 
          <br>&ensp;&ensp; 
-         Si saltamos y estamos tocando Suelo (Lo controlaremos en otro evento Actor-Any). Le hacemos un presionar con el valor
+         Si saltamos y estamos tocando Suelo (Lo controlaremos en otro evento Actor-Any). Le hacemos un presionar 
+         con el valor
          "Mover", una dirección Y a -1 (hacia arriba) y una fuerza.
          </p>
          <p class="img_centrada"><img src="img/actividad6/6-14.png" width="70%" alt=""></p>
 
       <p class="texto"> 
          &ensp;&ensp; 
-         Necesitaria otro atributo boleano "Izquierda" para saber que la dirección y que no sobrepase un número determinado de x-speed
+         Necesitaria otro atributo boleano "Izquierda" para saber que la dirección y que no sobrepase un número 
+         determinado de x-speed
          y cambiar la animación.     
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-15.png" width="30%" alt=""></p>
 
       <p class="texto"> 
          &ensp;&ensp; 
-         Vamos a controlar que si va el Player a más velocidad no pueda pasar de 15 tanto hacia la derecha como a la izquierda.
+         Vamos a controlar que si va el Player a más velocidad no pueda pasar de 15 tanto hacia la derecha como a 
+         la izquierda.
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-16.png" width="50%" alt=""></p>
 
@@ -336,13 +366,15 @@
 =======
          <&ensp;&ensp; 
 >>>>>>> 1d46426774026ec9751540911c0b0de8864dd9c1
-         Si estoy saltando compruebo la dirección y cambio la animación a Jump. Y me creo un atributo del Juego "Direccion Player" de tipo Texto.
+         Si estoy saltando compruebo la dirección y cambio la animación a Jump. Y me creo un atributo del Juego 
+         "Direccion Player" de tipo Texto.
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-17.png" width="40%" alt=""></p>
 
       <p class="texto"> 
          &ensp;&ensp; 
-         Si el "Mover" no es 0 y "Suelo" es true o sea estoy tocando el suelo cambio la animación a Run y inicializo el atributo "Direccion Player".
+         Si el "Mover" no es 0 y "Suelo" es true o sea estoy tocando el suelo cambio la animación a Run y
+          inicializo el atributo "Direccion Player".
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-18.png" width="40%" alt=""></p>
 
@@ -354,19 +386,22 @@
 
       <p class="texto"> 
       &ensp;&ensp; 
-       Al final del Updated inicializo las variables. Y recojo continuamente la posición X de nuestro Player para cuando lancemos una 
+       Al final del Updated inicializo las variables. Y recojo continuamente la posición X de nuestro Player
+        para cuando lancemos una 
        basura desde arriba siempre caiga por delante de él.
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-20.png" width="40%" alt=""></p>
 
       <p class="texto"> 
-       - Created: Inicializamos el atributo "Saltando" a false. Este atributo nos dirá si esta saltando o no el Player
+       - Created: Inicializamos el atributo "Saltando" a false. Este atributo nos dirá si esta saltando o no el
+        Player
        para poder cambiar la animción de Idle cuando toque el suelo (Lo veremos más adelante).
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-21.png" width="20%" alt=""></p>
 
       <p class="texto"> 
-         - Actor-Any: Cuando colisiona está entidad con algo y le da por debajo tenemos que poner el atributo "Suelo" a true y si
+         - Actor-Any: Cuando colisiona está entidad con algo y le da por debajo tenemos que poner el atributo "Suelo"
+          a true y si
          ha saltado tenemos que volver a cambiar la animación a "Idle". Y "Saltando" se quedará a false. 
          <br>
          Este cambio de animación tendremos que esperar 1 segundo para hacerlo para que se vea la animación de saltar.
@@ -407,7 +442,8 @@
          <p class="img_centrada"><img src="img/actividad6/6-24.png" width="50%" alt=""></p>
 
          <p class="texto">
-            Vamos hacer el Behaviour para que cuando el Disparo se salga de la pantalla se destruya. Lo llamaremos "Behaviour Destruir Salir Pantalla" 
+            Vamos hacer el Behaviour para que cuando el Disparo se salga de la pantalla se destruya. Lo llamaremos
+             "Behaviour Destruir Salir Pantalla" 
             <br>
             Se lo asignamos a esta entidad.
          </p>
@@ -428,7 +464,8 @@
 
 
          <p class="texto">
-            Ahora necesitamos que se dispare la bala asi que necesitamos hacer el Behaviour Crear Disparos. Que lo tendrá asociado el Player
+            Ahora necesitamos que se dispare la bala asi que necesitamos hacer el Behaviour Crear Disparos. Que lo
+             tendrá asociado el Player
             en la solapa de Conductas. 
          </p>
    
@@ -439,7 +476,8 @@
          <br>
          - Keyboard: Se dispara con el espacio. 
          <br>&ensp;&ensp; 
-         Tenemos que saber a que dirección apunta nuestro Player y para eso ya tenemos un atributo del juego "Direccion Player" que lo
+         Tenemos que saber a que dirección apunta nuestro Player y para eso ya tenemos un atributo del juego
+          "Direccion Player" que lo
          inicializamos en "Behaviuor Movimiento Player".  
          <br>&ensp;&ensp; 
          Pondremos que se oiga el sonido del disparo (Behaviour Sonidos)
@@ -451,7 +489,8 @@
         <p class="img_centrada"><img src="img/actividad6/6-27.png" width="80%" alt=""></p>
 
       <p class="texto">
-         Tendremos que comprobar que el disparo hace alguna colisión. Creamos otro Behaviour Colisiones Player, y se lo asignamos al
+         Tendremos que comprobar que el disparo hace alguna colisión. Creamos otro Behaviour Colisiones Player,
+          y se lo asignamos al
          Player.
       </p>
 
@@ -459,7 +498,8 @@
       <p class="texto">
          Tendremos varios Eventos para poder hacer las distintas colisiones que tenemos:
          <br>
-         - Group - Group - Disparo colisiona con Enemigo: Si el grupo de Disparos golpea al grupo de Enemigos sumaremos un atributo 
+         - Group - Group - Disparo colisiona con Enemigo: Si el grupo de Disparos golpea al grupo de Enemigos 
+         sumaremos un atributo 
          del juego "Puntuacion" se destruye el disparo y el enemigo.
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-28.png" width="60%" alt=""></p>
@@ -470,10 +510,13 @@
 
       <h4>Enemigos</h4>
       <p class="texto"> 
-         Antes de continuar con el Behaviour Colisiones Player haremos a los Enemigos para poder continuar el juego.
+         Antes de continuar con el Behaviour Colisiones Player haremos a los Enemigos para poder continuar el
+          juego.
          <br>
-         Cogeremos los Sprites de los Enemigos que queramos. Escala 4 y haremos varias animaciones: Idle, Walk(frame-1-left.png....frame-4-left.png), 
-         y got hit (frame-1-left.png y frame-2-left.png). Haremos luego el resto de la animaciones mirando a la derecha volteandolas en horizontal.
+         Cogeremos los Sprites de los Enemigos que queramos. Escala 4 y haremos varias animaciones: Idle, 
+         Walk(frame-1-left.png....frame-4-left.png), 
+         y got hit (frame-1-left.png y frame-2-left.png). Haremos luego el resto de la animaciones mirando a la 
+         derecha volteandolas en horizontal.
        <br>
          Tendrá una colisión y una Física:
          <br>&ensp;&ensp; 
@@ -495,7 +538,8 @@
       <p class="texto">
          Ahora que ya tenemos el Enemigo creado hacemos la colisión con el Enemigo.
          <br>
-         - Actor - Group - Colisiona con Enemigos: Cuando al Player colisiona con el Enemigo se escuchara el sonido de "SFXTocar_Enemigo" que está
+         - Actor - Group - Colisiona con Enemigos: Cuando al Player colisiona con el Enemigo se escuchara el sonido
+          de "SFXTocar_Enemigo" que está
          en el Behaviour Sonidos.
          <br>
          Quitaremos una vida al Player.
@@ -526,13 +570,16 @@
          <br>
          - Actor Created: Sumaremos puntuación a un atributo del juego "Puntuacion".
          <br>&ensp;&ensp; 
-         Crearemos dos atributos "Actor Fragmento" y "Actor Explosion" serán de tipo entidad. Y otro "Direction" será númerico para
+         Crearemos dos atributos "Actor Fragmento" y "Actor Explosion" serán de tipo entidad. Y otro "Direction"
+          será númerico para
          que salgan despedidos los fragmentos a distintas direcciones.
          <br>&ensp;&ensp; 
-         Cuando se lo asignemos a un enemigo rellenaremos uno u otro tipo de actor. Y asi podemos preguntar si tiene valor o no para
+         Cuando se lo asignemos a un enemigo rellenaremos uno u otro tipo de actor. Y asi podemos preguntar si 
+         tiene valor o no para
          poder hacer una cosa u otra.
          <br>&ensp;&ensp; 
-         Si lo que queremos es que salgan fragmentos hare un repetir un número de veces para que se cree ese fragmento, lo posicionare 
+         Si lo que queremos es que salgan fragmentos hare un repetir un número de veces para que se cree ese 
+         fragmento, lo posicionare 
          en el enemigo y le dare una velocidad y una velocidad angular para que gire.
          <br>&ensp;&ensp; 
          Pero si lo que quiero es que salga solo la Explosión simplemente la creare en la posición del enemigo.       
@@ -540,7 +587,8 @@
       <p class="img_centrada"><img src="img/actividad6/6-31.png" width="80%" alt=""></p>
 
       <p class="nota">
-         Al crear los atributos se pueden poner que se vean o que no. En nuestro caso pondremos que se vean solo "Actor Fragmento" y
+         Al crear los atributos se pueden poner que se vean o que no. En nuestro caso pondremos que se vean solo
+          "Actor Fragmento" y
         "Actor Explosion". 
       </p>
 
@@ -594,12 +642,14 @@
         <br>
         - "ActorASeguir" es el actor al que perseguimos. Será una entidad.
         <br>
-        - "AnimacionDerecha" y "AnimacionIzquierda" para saber que animación hay que poner dependiendo donde este el Player. Será de tipo 
+        - "AnimacionDerecha" y "AnimacionIzquierda" para saber que animación hay que poner dependiendo donde este
+         el Player. Será de tipo 
         Animación.
         <br>
         Necesitaremos 2 Eventos:
         <br>
-        - Evento Created: Para inicializar la posición del Player y la animación de los enemigos dependiendo donde se encuentre nuestro Player.
+        - Evento Created: Para inicializar la posición del Player y la animación de los enemigos dependiendo donde 
+        se encuentre nuestro Player.
       </p>
 <<<<<<< HEAD
       <p class="img_centrada"><img src="img/actividad6/6-34.png" width="50%" alt=""></p>
@@ -608,7 +658,8 @@
 >>>>>>> 1d46426774026ec9751540911c0b0de8864dd9c1
 
       <p class="texto"> 
-         - Evento Update: Para actualizar la posición del Player y la animación de los enemigos. Y también haremos que el Enemigo se mueva 
+         - Evento Update: Para actualizar la posición del Player y la animación de los enemigos. Y también haremos
+          que el Enemigo se mueva 
          dependiendo hacia que dirección este el Player comprobandolo con la X.
        </p>
 <<<<<<< HEAD
@@ -618,7 +669,8 @@
 
      <h4>Fragmentos</h4>
      <p class="texto"> 
-      Necesitamos hacer los Fragmentos para que al destruir aparezcan. Escala 4 y los sprite están en Actor Types/Enemigos/Monster C/idle/frame-fragmento.png.
+      Necesitamos hacer los Fragmentos para que al destruir aparezcan. Escala 4 y los sprite están en
+       Actor Types/Enemigos/Monster C/idle/frame-fragmento.png.
       <br>
       <br>
       No tiene colisión y si tiene Física:
@@ -637,7 +689,8 @@
 
      <h4>Behaviour Desaparecer despues de un tiempo</h4>
       <p class="texto"> 
-        Este behaviour estará en los fragmentos de los enemigos. Y lo que hara es que se desvanezcan poco a poco y se destruya
+        Este behaviour estará en los fragmentos de los enemigos. Y lo que hara es que se desvanezcan poco a poco 
+        y se destruya
         la entidad.
         <br>
         Necesitaremos 2 Eventos:
@@ -647,7 +700,8 @@
       <p class="img_centrada"><img src="img/actividad6/6-37.png" width="30%" alt=""></p>
 
       <p class="texto"> 
-         - Advanced/Custom Event Desaparecer: Al oir ese mensaje que llamamos hacemos que se desvanezca y se destruya al cabo de un tiempo.
+         - Advanced/Custom Event Desaparecer: Al oir ese mensaje que llamamos hacemos que se desvanezca y se 
+         destruya al cabo de un tiempo.
        </p>
        <p class="img_centrada"><img src="img/actividad6/6-38.png" width="50%" alt=""></p>
  
@@ -658,14 +712,17 @@
 
        <h4>Enemigos</h4>
        <p class="texto"> 
-          Ahora explicaremos como introducimos estos Behaviour "Explotar Si Muere" y "Seguir al Objetivo" en el Enemigo.
+          Ahora explicaremos como introducimos estos Behaviour "Explotar Si Muere" y "Seguir al Objetivo" en el
+           Enemigo.
           <br>
           Vamos a nuestro Nivel 1, ponemos al Enemigo y lo seleccionamos.
           <br>
-          En la parte de la derecha aparecen unas solapas Paleta e Inspector. Seleccionamos a nuestro Enemigo y en Inspector nos aparecera 
+          En la parte de la derecha aparecen unas solapas Paleta e Inspector. Seleccionamos a nuestro Enemigo y 
+          en Inspector nos aparecera 
           sus propiedades. 
           <br>
-          Y hay un check que pone "Customize". Ahi añadiremos nuestros behaviour dandole al "+" y rellenaremos los parámetros que nos interesen.       
+          Y hay un check que pone "Customize". Ahi añadiremos nuestros behaviour dandole al "+" y rellenaremos los
+           parámetros que nos interesen.       
        </p>
 <<<<<<< HEAD
        <p class="img_centrada"><img src="img/actividad6/6-39.png" width="40%" alt=""></p>
@@ -674,9 +731,11 @@
 >>>>>>> 1d46426774026ec9751540911c0b0de8864dd9c1
 
        <p class="nota">
-        Cuidado al poner los Behaviour ó se ponen en la Escena como hemos explicado o se ponen en la Entidad. Manda siempre el que tenga en la Escena.
+        Cuidado al poner los Behaviour ó se ponen en la Escena como hemos explicado o se ponen en la Entidad. 
+        Manda siempre el que tenga en la Escena.
         <br>
-        Y cuidado en tener chequeado en la escena que tenemos un Behaviour pero en realidad no halla ningún Behaviour y NO funcionara el que tengamos
+        Y cuidado en tener chequeado en la escena que tenemos un Behaviour pero en realidad no halla ningún
+         Behaviour y NO funcionara el que tengamos
         en la entidad. 
        </p>
 
@@ -703,7 +762,8 @@
       <p class="texto">
          Ahora que ya tenemos a los Recolectables creados hacemos la colisión con el Player.
          <br>
-         - Actor - Group - Colisiona con Recolectales: Creamos un atributo "Desvanecer" a verdadero para que le de tiempo hacer el código. 
+         - Actor - Group - Colisiona con Recolectales: Creamos un atributo "Desvanecer" a verdadero para que 
+         le de tiempo hacer el código. 
          Este atributo se crea en este Behaviour y será oculto.
 =======
        <p class="img_centrada"><img src="img/actividad6/6-35.png" width="40%" alt=""></p>
@@ -712,12 +772,15 @@
       <p class="texto">
          Ahora que ya tenemos a los Recolectables creados hacemos la colisión con el Enemigo.
          <br>
-         - Actor - Group - Colisiona con Recolectales: Creamos un atributo "Desvanecer" a verdadero para que le de tiempo hacer el código.
+         - Actor - Group - Colisiona con Recolectales: Creamos un atributo "Desvanecer" a verdadero para que 
+         le de tiempo hacer el código.
 >>>>>>> 1d46426774026ec9751540911c0b0de8864dd9c1
          <br>
-         Ponemos el atributo a falso para que no este continuamente metiendose y que no se oigan lo sonidos nada más que una vez.
+         Ponemos el atributo a falso para que no este continuamente metiendose y que no se oigan lo sonidos nada
+          más que una vez.
          <br>
-         Cuando al Player colisiona con la Botella se escuchara el sonido de "SFXRecoger" que está en el Behaviour Sonidos.
+         Cuando al Player colisiona con la Botella se escuchara el sonido de "SFXRecoger" que está en el Behaviour
+          Sonidos.
          <br>
          Sumaremos menos puntuación que con los Enemigos en el atributo del juego "Puntuacion".
          <br>
@@ -778,10 +841,12 @@
 
       <h4>Interruptores</h4>
       <p class="texto">
-         La entidad Interruptor esta en Actor Types/Interruptores. Escala 1. Tendrá dos animaciones una interruptor.png en rojo( animación defecto)
+         La entidad Interruptor esta en Actor Types/Interruptores. Escala 1. Tendrá dos animaciones una 
+         interruptor.png en rojo( animación defecto)
           y otra verde interruptor-verde. La roja será un sensor para poder atravesarla.
 =======
-         - Every N secs: Cada cierto tiempo crearemos un Dropper. (Comprobar que siempre este por delante del Plauuyer?????)
+         - Every N secs: Cada cierto tiempo crearemos un Dropper. (Comprobar que siempre este por delante del 
+         Player?????)
          <br>
         ????????
       </p>
@@ -790,7 +855,8 @@
 
       <h4>Interruptores</h4>
       <p class="texto">
-         La entidad Interruptor esta en Actor Types/Interruptores. Escala 1. Tendrá dos animaciones una roja( animación defecto)
+         La entidad Interruptor esta en Actor Types/Interruptores. Escala 1. Tendrá dos animaciones una 
+         roja( animación defecto)
           y otra verde. La roja será un sensor para poder atravesarla.
 >>>>>>> 1d46426774026ec9751540911c0b0de8864dd9c1
          <br>
@@ -822,13 +888,15 @@
 
 
          <p class="texto">
-            Cuando el Interruptor este encendido abriremos la puerta y la pondremos en verde y cuando lo toquemos pasaremos al
+            Cuando el Interruptor este encendido abriremos la puerta y la pondremos en verde y cuando lo toquemos
+             pasaremos al
             siguiente nivel.
          </p>
 
       <h4>Puerta</h4>
       <p class="texto">
-         La entidad Puerta esta en Actor Types/Interruptores. Escala 1. Tendrá dos animaciones una closed.png(animación defecto en rojo)
+         La entidad Puerta esta en Actor Types/Interruptores. Escala 1. Tendrá dos animaciones una closed.png
+         (animación defecto en rojo)
           y otra verde open.png. Ambos serán un sensor para poder atravesarlas.
          <br>
          Tendrá una colisión y una Física:
@@ -846,14 +914,16 @@
             <br>
             - Update: Creamos un atributo del juego "Entra Region" será False por defecto.
             <br>
-            Cuando toquemos el Interruptor cambiaremos la animación de la Puerta a verde y ya podriamos entrar en la Región.
+            Cuando toquemos el Interruptor cambiaremos la animación de la Puerta a verde y ya podriamos entrar
+             en la Región.
          </p>
          <p class="img_centrada"><img src="img/actividad6/6-47.png" width="50%" alt=""></p>
         
 
          <h4>Behaviour Entra en Region</h4>
          <p class="texto">
-            Necesitamos hacer otro comportamiento para saber si hemos entrado en la región para poder pasar al siguiente nivel.
+            Necesitamos hacer otro comportamiento para saber si hemos entrado en la región para poder pasar al 
+            siguiente nivel.
             <br>
             Para ello se tiene que activar la Puerta y debe de estár con la animación en verde.
             <br>
@@ -880,7 +950,8 @@
 
          <p class="texto">
             Tiene 1 Evento:
-            - Update: Si atributo del Juego "Entra Region" esta a verdadero hara unas comprobaciones de si los parámetros tienen valores.
+            - Update: Si atributo del Juego "Entra Region" esta a verdadero hara unas comprobaciones de si los 
+            parámetros tienen valores.
             Y si el Actor esta dentro hara la llamada al siguiente Nivel.
             <br>
             Tenemos que hacer estas 3 comprobaciones.
@@ -899,7 +970,8 @@
          <p class="img_centrada"><img src="img/actividad6/6-52.png" width="40%" alt=""></p>
 
          <p class="texto">
-            - Updating: Controlamos las posiciones de X/Y para que no se salga y tambien sus posiciones con el ancho/alto de la escena.       
+            - Updating: Controlamos las posiciones de X/Y para que no se salga y tambien sus posiciones con el 
+            ancho/alto de la escena.       
         </p>
          <p class="img_centrada"><img src="img/actividad6/6-53.png" width="70%" alt=""></p>
 
@@ -957,17 +1029,20 @@
            <p class="texto">
             Tiene 3 Eventos:
            <br>
-           - Created: Siempre estará activo. Y le inicializamos los atributos "Empiece" y "Final". Y le damos una velocidad.5
+           - Created: Siempre estará activo. Y le inicializamos los atributos "Empiece" y "Final". Y le damos una 
+           velocidad.5
            </p>
            <p class="img_centrada"><img src="img/actividad6/6-59.png" width="50%" alt=""></p>
 
            <p class="texto">
-           - Updated: Si la posición Y es Mayor o Menor a los valores iniciales del Created le damos la dirección contraria.
+           - Updated: Si la posición Y es Mayor o Menor a los valores iniciales del Created le damos la dirección
+            contraria.
            </p>
            <p class="img_centrada"><img src="img/actividad6/6-60.png" width="60%" alt=""></p>
 
            <p class="texto">
-            - Actor Any: Si el lado inferior es golpeado hacemos que vaya al contrario. Por si se ha chocado con lo que sea.
+            - Actor Any: Si el lado inferior es golpeado hacemos que vaya al contrario. Por si se ha chocado con
+             lo que sea.
             </p>
             <p class="img_centrada"><img src="img/actividad6/6-61.png" width="40%" alt=""></p>
            
@@ -1016,7 +1091,8 @@
             <p class="texto">
                Nos faltaria un Evento en este Behaviour.
                <br>
-               - Actor - Type: Si se golpea con la Plataforma Horizontal por el lado inferior, le ponemos la X de la Plataforma al Player. 
+               - Actor - Type: Si se golpea con la Plataforma Horizontal por el lado inferior, le ponemos la X de
+                la Plataforma al Player. 
                Para que el Player este siempre en su misma posición.
             </p>
             <p class="img_centrada"><img src="img/actividad6/6-65.png" width="60%" alt=""></p>
@@ -1034,7 +1110,8 @@
             <p class="texto">
                Este Behaviour tiene 2 Eventos:
                <br>
-               - Drawing: Le cambiamos la fuente a la nueva que hemos incluido y ponemos los Enemigos que nos quedan con el atributo "Numero".
+               - Drawing: Le cambiamos la fuente a la nueva que hemos incluido y ponemos los Enemigos que nos 
+               quedan con el atributo "Numero".
             </p>
             <p class="img_centrada"><img src="img/actividad6/6-67.png" width="50%" alt=""></p>
 
@@ -1044,12 +1121,14 @@
             <p class="img_centrada"><img src="img/actividad6/6-68.png" width="70%" alt=""></p>
         
             <p class="nota">
-               Si estoy en el Nivel 3 cambiara a la Escena de Enhorabuena. Con un botón para volver a empezar el juego.
+               Si estoy en el Nivel 3 cambiara a la Escena de Enhorabuena. Con un botón para volver a empezar 
+               el juego.
             </p>
             
       <h4>Behaviour Manejar Puntuaciones</h4>
       <p class="texto">
-         Es un Behaviour de tipo Escena y nos servirá para todos los Niveles. Y nos ira sumando la puntuación y el tiempo que tengo
+         Es un Behaviour de tipo Escena y nos servirá para todos los Niveles. Y nos ira sumando la puntuación 
+         y el tiempo que tengo
           para terminar el Nivel.
          <br>
          Necesitamos 1 atributos:
@@ -1069,20 +1148,23 @@
          <p class="img_centrada"><img src="img/actividad6/6-71.png" width="50%" alt=""></p>
 
          <p class="texto">
-         - Every N secs: Cada 1 segundo descrementamos el atributo "Cuentaatras". Si la "Cuentaatras" es 0 quitamos 1 vida al Player.
+         - Every N secs: Cada 1 segundo descrementamos el atributo "Cuentaatras". Si la "Cuentaatras" es 0 quitamos 
+         1 vida al Player.
          Y si ya no tiene vidas sonido de muerte y escena de "Game Over".
          </p>
          <p class="img_centrada"><img src="img/actividad6/6-72.png" width="50%" alt=""></p>
 
          <p class="texto">
-            - Drawing/Cuenta Atras: Pondremos un grosor del contorno, el color y el color del marco y hacemos un rectángulo, 
+            - Drawing/Cuenta Atras: Pondremos un grosor del contorno, el color y el color del marco y hacemos un 
+            rectángulo, 
             Rellenando width con Cuentaatras * 10.
             </p>
             <p class="img_centrada"><img src="img/actividad6/6-73.png" width="60%" alt=""></p>
 
          <h4>Vidas</h4>
          <p class="texto">
-            Hay que añadir la entidad de Vidas. Añadir los Sprites que estarán en Actor Types/Vidas/vidas4.png.....vidas0.png. Escala 1.
+            Hay que añadir la entidad de Vidas. Añadir los Sprites que estarán en Actor Types/Vidas/vidas4.png
+            .....vidas0.png. Escala 1.
             <br>
               No tiene colisión y en Física:
             <br>&ensp;&ensp; 
@@ -1090,7 +1172,8 @@
              <br>&ensp;&ensp; 
              - El resto de las opciones se quedan como están.
               <br>
-            Y pertenecera al Grupo de Colisión de Doodads (que es un grupo que viene por defecto que no colisiona con nada).
+            Y pertenecera al Grupo de Colisión de Doodads (que es un grupo que viene por defecto que no colisiona
+             con nada).
             <br>
             Tiene 2 Eventos:
             <br>
@@ -1114,7 +1197,8 @@
              <br>&ensp;&ensp; 
              - El resto de las opciones se quedan como están.
                 <br>
-                Y pertenecera al Grupo de Colisión de Doodads (que es un grupo que viene por defecto que no colisiona con nada).
+                Y pertenecera al Grupo de Colisión de Doodads (que es un grupo que viene por defecto que no 
+                colisiona con nada).
             <br>
             Tiene 1 Evento:
               <br>
@@ -1127,12 +1211,14 @@
       <p class="texto">     
        Tiene 4 Eventos:
        <br>
-       - Created: Creamos un atributo del juego "Pausado" y lo inicializaremos a falso. Para saber que animación tenemos que mostrar.
+       - Created: Creamos un atributo del juego "Pausado" y lo inicializaremos a falso. Para saber que animación
+        tenemos que mostrar.
       </p>
        <p class="img_centrada"><img src="img/actividad6/6-76.png" width="25%" alt=""></p>
       
        <p class="texto">  
-       - Input/On Actor: Si no esta Pausado ponemos la animación de pausar y pausamos el juego. Y sino ponemos la animación de No Pausar y 
+       - Input/On Actor: Si no esta Pausado ponemos la animación de pausar y pausamos el juego. Y sino ponemos 
+       la animación de No Pausar y 
        reanudamos el juego.
        </p>
        <p class="img_centrada"><img src="img/actividad6/6-77.png" width="40%" alt=""></p>
@@ -1149,13 +1235,15 @@
    
 
         <p class="nota">     
-         Para hacer que las entidades se pausen tenemos que meternos en cada entidad en Físisca/Advanced y chequear que pueda ser pausado.
+         Para hacer que las entidades se pausen tenemos que meternos en cada entidad en Físisca/Advanced y chequear 
+         que pueda ser pausado.
         </p>
         <p class="img_centrada"><img src="img/actividad6/6-80.png" width="50%" alt=""></p>
 
       <h4>Nivel 1</h4>
       <p class="texto">     
-       Tenemos que modificar un poco los Eventos del Nivel. Ya que tenemos que pausar también el movimiento de los fondos.
+       Tenemos que modificar un poco los Eventos del Nivel. Ya que tenemos que pausar también el movimiento de
+        los fondos.
       </p>
       <p class="img_centrada"><img src="img/actividad6/6-81.png" width="50%" alt=""></p>
        <p class="img_centrada"><img src="img/actividad6/6-82.png" width="50%" alt=""></p>
@@ -1170,7 +1258,8 @@
       <br>&ensp;&ensp; 
     - El resto de las opciones se quedan como están.
       <br>
-      Y pertenecera al Grupo de Colisión de Doodads (que es un grupo que viene por defecto que no colisiona con nada).
+      Y pertenecera al Grupo de Colisión de Doodads (que es un grupo que viene por defecto que no colisiona con 
+      nada).
       <br>
        Tiene 1 Evento:
        <br>
@@ -1183,7 +1272,8 @@
        <p class="texto">     
         Tiene 2 Eventos:
         <br>
-        - Created: Creamos un atributo del juego "Sonido" y lo inicializaremos a falso. Para saber que animación tenemos que mostrar.
+        - Created: Creamos un atributo del juego "Sonido" y lo inicializaremos a falso. Para saber que animación
+         tenemos que mostrar.
        </p>
         <p class="img_centrada"><img src="img/actividad6/6-83.png" width="25%" alt=""></p>
        
