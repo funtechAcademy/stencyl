@@ -118,18 +118,28 @@
        <p class="texto">    
          Para poder crear los Bloques lo haremos desde el Evento "Created" del Escenario.
          <br>
-         - Necesitamos varios Atributos (serán locales): PosicionX, PosicionX Inicial, PosicionY y Repetir (todos son de tipo númerico)
+         - Necesitamos varios Atributos (serán locales): PosicionX, PosicionX Inicial, PosicionY y Repetir (todos son
+          de tipo númerico)
          <br>
-         - También tenemos que crear unos Atributos del juego: Esperar y Juego Terminado (ambos Booleanos inicializados a Falso), numero bloques, numero bloques 
-         eliminados, Vidas (de tipo númerico)
+         - También tenemos que crear unos Atributos del juego: Esperar y Juego Terminado (ambos Booleanos inicializados
+          a Falso), numero bloques, numero bloques eliminados, Vidas (de tipo númerico)
          <br>
          - Al comienzo del juego inicializar numero bloques, numero bloques eliminados y Puntos a 0. Y Vidas a 3.
          <br>
-         - Los podemos crear de muchas maneras una de ellas es utilizando el repetir y mandando un Custom Event que es que crea el Bloque, inicializando
-         las variables de Puntos, Repetir, PosicionX, PosicionY, PosicionX Inicial (por cada fila) y sumando al numero de bloques los bloques que creamos.
+         - Los podemos crear de muchas maneras una de ellas es utilizando el repetir y mandando un Custom Event que es
+          que crea el Bloque, inicializando
+         las variables de Puntos, Repetir, PosicionX, PosicionY, PosicionX Inicial (por cada fila) y sumando al numero
+          de bloques los bloques que creamos.
        </p>
        <p class="img_centrada"><img src="img/actividad2/2-9.png" width="40%" alt=""></p>
 
+ 				<p class="nota">    
+       		Las Vidas se pueden inicializar al comenzar el juego en el Evento Create o al crearla tanto en 
+       		Atributos (variables locales) o Atributos del Juego (variables globales) en la pestaña de Atributos dentro
+       	 de cualquier evento.<br>
+       		Los Atributos del Juego también podemos crearlas e inicializarlas desde Settings/Atributos.
+       </p>
+       
        <p class="texto">    
          Recordar que tenemos que agregar la entidad de "Green Block" antes de poder hacer algo con ella.  Escala 1 y seleccionar la imagen "Green Block.png".
        </p>
