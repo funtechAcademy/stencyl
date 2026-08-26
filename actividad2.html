@@ -23,117 +23,228 @@
    <div id="contenido">
       <h2>Arkanoid</h2>
       <p class="texto">
-         El Arkanoid es un divertido que exige unos reflejos rápidos. Usa física, colisiones y efectos especiales para entretener al jugador. 
+         El Arkanoid es un divertido juego que exige unos reflejos rápidos. Usa física, colisiones y efectos especiales 
+         para retar al jugador. 
       </p>
-
-      <h3>Objetos Necesarios</h3>
-      <h4>Paddle</h4>
-      <p class="texto">
-         Se moverá de izquierda a derecha y no podrá atravesar las paredes.
-      </p>
-      <h4>Ball</h4>
-      <p class="texto">
-         El Ball rebotará en el Paddle, los bloques y las tiles.
-      </p>
-      <h4>Green Block</h4>
-      <p class="texto">
-         Los Bloques que cambiarán de color y harán un sonido cuando la bola colisione con ellas. Y si le damos una segunda vez se eliminara el bloque y 
-         puntuara.
-      </p>
-
-      <h4>Escenarios</h4>
-      <p class="texto">
-         El Escenario tendrá 2 capas. La 0 sera donde dibujaremos el borde con la tiles y el Background que pondremos el fondo que tenemos en el juego.
-      </p>
-
       <p class="nota">
-         Siempre tiene que estar la capa 0 en la primera posición empezando por arriba, ya que es donde dibujaremos y añadiremos nuestras Entidades. Para 
-         poder hacerlo tiene que estar seleccionada la capa 0.
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/1-Arkanoid.zip" download="Arkanoid"> link</a>. Es un archivo comprimido con 3 imágenes 
+         y 1 sonido. Lo descargaremos y lo descomprimimos en el directorio del alumno. 
+
+         <br><br><br><br>
+REVISAR
+         <br><br><br><br>
       </p>
-   
-      <h3>Paso A Paso</h3>
+      <h3>Objetivos</h3>
       <p class="texto">
-         El juego consiste en que el Paddle se moverá con las flechas derecha e izquierda sin que sobrepase los bordes.
-         <br>
-         La pelota empezara a moverse cuando presionemos la tecla espacio e ira rebotando con el Paddle, Bloque y Tiles. Tendremos 3 pelotas disponibles
-         para poder jugar. Solo podra salir otra pelota cuando la anterior haya salido de la escena.
-         <br>
-         Los Bloques tendrán 2 vidas. La primera vez que le de la pelota cambiara de color y la segunda vez se eliminara el Bloque y puntuara.
-         <br>
-         El Juego terminara cuando ya no tengamos más vidas o cuando hallamos acabado con todos los bloques. Y pondremos una entidad de "Game Over" ó
-         "You Win".
+      <p class="texto">
+         El juego consiste en que la paleta se moverá con las flechas derecha e izquierda sin que sobrepase los bordes.
+         <br><br>
+         La pelota empezara a moverse cuando presionemos la tecla espacio e ira rebotando con la paleta, los bloques y 
+         los bordes. Tendremos 3 pelotas (o vidas) disponibles para poder jugar. Solo podra salir otra pelota cuando 
+         la anterior haya salido de la escena.
+         <br><br>
+         Los bloques tendrán 2 "vidas". La primera vez que le toque la pelota cambiara de color y la segunda vez se 
+         eliminará, puntuando con 1 punto.
+         <br><br>
+         El juego terminará cuando ya no tengamos más vidas o cuando hallamos acabado con todos los bloques. En ambas 
+         ocasiones pondremos una entidad con el mensaje "Game Over" o "You Win".
       </p>
+      <h2>Paso A Paso</h2>
+      <h3>Creamos La Escena</h3>
+      <p class="texto">    
+         Lo primero que haremos será crear el juego, en este caso, en blanco.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-1.png" width="80%" alt=""></p>
+      <p class="texto">
+         Le damos el nombre "Arkanoid" y le mantenemos las dimensiones que vienen por defecto.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-2.png" width="80%" alt=""></p>
+      <p class="texto">
+         Creamos una escena con la anchura y altura que ponga por defecto. Como vamos a poner tiles en toda la escena, 
+         podemos hacerla con cualquier color de fondo. De momento la dejamos así.
+         <br><br>
+         Lo primero que necesitamos para poner en nuestra escena, son las tiles y el fondo. Como no los tenemos, los 
+         añadiremos al juego dentro de "Set de baldosas" y "Fondos".
+         <br><br>
+         Para añadir el fondo pinchamos en "Fondos" y pinchamos en crear un fondo. Le damos el nombre "Fondo" y lo 
+         creamos.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-3.png" width="80%" alt=""></p>
+      <p class="texto">
+         Añadimos un fotograma, poniéndole escala "1x" y le damos a "Elegir imagen". Seleccionamos la imagen 
+         "Fondo.png" de los objetos proporcionados, y lo añadimos.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-4.png" width="80%" alt=""></p>
+      <p class="texto">
+         Ahora añadiremos el set de baldosas. Nos vamos a "Set de baldosas" y añadimos un set. Le ponemos el nombre 
+         "Baldosas" y lo creamos.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-5.png" width="80%" alt=""></p>
+      <p class="texto">
+         Añadimos una imagen, poniéndole escala "1x" y le damos a "Elegir imagen". Seleccionamos la imagen 
+         "Baldosas.png" de los objetos proporcionados, y lo añadimos.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-6.png" width="80%" alt=""></p>
+      <p class="texto">
+         Una vez que tengamos el fondo y las tiles, ya podemos crear nuestro Escenario.
+         <br><br>
+         Pondremos el fondo y un borde alrededor de tiles. Debe quedar de esta forma:
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-7.png" width="80%" alt=""></p>
+      <p class="texto">
+         Ahora creamos la entidad "Paleta" como ya vimos anteriormente, con la escala "1x" y con la imagen "Paleta.png" 
+         de los objetos proporcionados.
+         <br><br>
+         Iremos a la física de la paleta y le pondremos que no puede rotar y que no se vé afectada por la gravedad.
+         <br><br>
+         La colocamos en el centro del escenario, en la parte inferior de nuestra escena.
+         <br><br>
+         La escena tendrá 2 capas. La capa 0 será donde dibujaremos el borde con la tiles y la capa 1 que será donde 
+         pondremos el fondo.
+      </p>
+      <p class="nota">
+         Siempre tiene que estar la capa 0 en la primera posición empezando por arriba, ya que es donde dibujaremos y 
+         añadiremos nuestras Entidades. Para poder hacerlo tiene que estar seleccionada la capa 0. La capa del fondo 
+         debe ser la última por abajo.
+      </p>
+      <h3>Creamos Los Ladrillos Dinámicamente</h3>
+      <p class="texto">    
+         Para poder crear los ladrillos dinámicamente, lo primero que haremnos será c rear la entidad "Ladrillo", con 
+         la escala "1x" y con la imagen "Ladrillo.png" de los objetos proporcionados.
+         <br><br>
+         Iremos a la física del ladrillo y le pondremos que no puede rotar y que no se vé afectada por la gravedad.
+         <br><br>
+         Iremos a la escena de nuevo y crearemos un evento "Basics" de tipo "When Creating".
+         <br><br>
+         Necesitaremos varias variables locales de tipo "Número" que serán:
+         <br><br>
+         &emsp;- PosicionX: Será la posición en el eje "X" donde crearemos el ladrillo.
+         <br><br>
+         &emsp;- PosicionY: Será la posición en el eje "Y" donde crearemos el ladrillo.
+         <br><br>
+         &emsp;- PosicionInicialX: Será la posición en el eje "X" donde crearemos el primer ladrillo.
+         <br><br>
+         &emsp;- NumeroLadrillos: Será el número de ladrillos que tendremos que crear por cada fila.
+         <br><br>
+         Inicializamos las variables con las posiciones iniciales y "9" con número de ladrillos en la primera fila.
+         <br><br>
+         Haremos un bucle repetir con "NumeroLadrillos" como las veces que tenemos que repetirlo (ya que son los 
+         ladrillos que tenemos que crear en cada fila).
+         <br><br>
+         Dentro del bucle añadiremos la creación de la entidad "Ladrillo" en las posiciones "PosicionX" y "PosicionY".
+         <br><br>
+         Añadimos "64" pixels a la posición en "X" opara crear el siguiente ladrillo y proibamos. 
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-8.png" width="60%" alt=""></p>
+      <p class="texto">
+         Tiene que quedar una escenario de este estilo.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-9.png" width="60%" alt=""></p>
+      <p class="texto">
+         Ahora, para crear la siguiente fila, tendremos que hacer un bucle por encima de la creación de los ladrillos 
+         por fila. Este bucle lo repetiremos el número de filas que queramos hacer. Vamos a probar de momento con 2.
+         <br><br>
+         Dentro de este nuevo bucle, pero después del bucle de crear los ladrillos, como se trata de una nueva fila, 
+         sumaremos 33 pixeles a la posición "Y" para que haga la siguiente fila.
+         <br><br>
+         Para que la siguiente fila empiece en la mitad del ladrillo de la fila anterior, sumeremos 33 pixeles a la 
+         posición inicial de "X". Y para empezar la nueva fila en esa posición, asignaremos esa posición inicial a la 
+         posición en "X".
+         <br><br>
+         Finalmente, restamos 1 al número de ladrillos a crear en la siguiente fila, ya que cada fila tiene un ladrillo 
+         menos que la anterior.
+      </p>  
+      <p class="img_centrada"><img src="img/actividad2/2-10.png" width="60%" alt=""></p>
+      <p class="texto">
+         Si probamos, podemos ver las dos filas creadas. Si cambiamos el bucle de las filas, en lugar de 2 repeticiones 
+         ponemos 9, hará todas las filas, quedando la escena de la siguiente forma.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-11.png" width="60%" alt=""></p>
+      <p class="texto">
+         En cuanto a la "Física", pondremos que no se puede empujar, que no puede rotar y que no está afectado por la 
+         gravedad (se pone directamente a "No" cuando marcamos que no se puede empujar).
+         <br><br>
+         En las "Propiedades", crearemos un nuevo grupo de colisión al que llamaremos "Ladrillo" y, de momento, no le 
+         pondremos colisión con ningún otro grupo. Lo haremós después.
+      </p>
+      <h3>Moviendo La Paleta</h3>
+      <p class="texto">    
+         Crearemos dos variables globales:
+         <br><br>
+         &emsp;- Vidas: Será númerico y tendrá las 3 vidas del juego.
+         <br><br>
+         &emsp;- FinJuego: Será una variable booleana (verdadero/falso) y representará si el juego ha terminado o no.
+         <br><br>
+         Vamos a programar el movimiento de la paleta con las flechas derecha e izquierda en un evento "When Updating".
+         <br><br>
+         Si pulsamos la flecha derecha vamos a la derecha, lo mismo para la izquierda y en caso contrario, dejamos de 
+         movernos.
+      </p>
+      <p class="img_centrada"><img src="img/actividad2/2-12.png" width="50%" alt=""></p>
+      <p class="texto">
+         Ahora revisaremos la zona de colisión, para que esté correcta.
+         <br><br>
+         En la "Física", pondremos que no puede rotar y que no está afectado por la gravedad.
+         <br><br>
+         En cuanto a las "Propiedades", crearemos un nuevo grupo de colisión al que llamaremos "Paleta", para después 
+         hacer que colisione con la pelota. De momento, le ponemos que colisionará con las tiles para que no pase de 
+         los laterales.
+      </p>
+      <h3> Creamos La Pelota</h3>
+      <p class="texto">
+         Crearemos una entidad a la que llamaremos pelota, con la escala "1x" y la animación con la imagen "Pelota.png" 
+         de los objetos proporcionados.
+         <br><br>
+         Iremos a la "Física" de la pelota y le pondremos que no puede rotar y que no se vé afectada por la gravedad.
+         <br><br>
+         Y en la "Propiedades, crearemos un nuevo grupo de colisión al que llamaremos "Pelota" y marcaremos las 
+         colisiones con los grupos "Tiles", "Ladrillos" y "Paleta".
+         <br><br>
+         Aprovecharemos para cambiar las colisiones de los grupos, "Ladrillos", que colisionará con el grupo "Pelota" y 
+         el grupo "Paleta", que colisionará con el grupo "Tiles (ya lo teníamos) y el grupo "Pelota". 
+      </p>
+      <p class="nota">
+         Revisamos que cada entidad tenga su grupo correspondiente asignado.
+      </p>
+      <p class="texto">
+         La pelota la lanzaremos con la tecla "Espacio", con lo que tendremos que crear ese control en "Settings". La 
+         vamos a llamar "Empezar".
+         <br><br>
+         Creamos un nuevo evento de Input/Universal/Keyboard y seleccionamos el botón nuevo que hemos creado.
 
-     <h4>Escenario</h4>
-      <p class="texto">    
-         Creamos un Escenario con la anchura y altura que ponga por defecto (El alumno la podra hacer más grande si quiere).
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-1.png" width="25%" alt=""></p>
 
-      <p class="texto">    
-         Lo primero que necesitamos son las Tiles y el Fondo (para poder ponerlas en el Escenario), asi que tendremos que añadir al proyecto dentro de
-         Fondos y Set de baldosas.
-      </p>
 
-      <p class="texto">    
-         Para añadir el Fondo damos a Biblioteca/Fondos y damos al botón.
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-2.png" width="15%" alt=""></p>
 
-      <p class="texto">    
-         Tenemos que dar al botón que aparece en la izquierda de "Pulsa para añadir un fotograma".
-         <br>
-         Escala 1 y seleccionar la imagen "New bricks.png" en el directorio donde esten los Sprites, Sonidos...
+        <br>
+        <br>
+        - Usaremos el atributo Vidas para poder lanzar una nueva pelota y otro atributo Esperar que sera booleano que hasta que la pelota anterior no halla
+        desaparecido de la escena no pueda volver a lanzar otra pelota.
+        <br>
+        - Deje otro bloque pero no está enganchado para que si quieren podríamos hacer que tuvieramos varias pelotas a la vez.
       </p>
-      <p class="img_centrada"><img src="img/actividad2/2-3.png" width="60%" alt=""></p>
-      <p class="img_centrada"><img src="img/actividad2/2-4.png" width="0%" alt=""></p>
-     
-      <p class="texto">    
-         Nos faltaria añadir el Set de baldosas damos a Biblioteca/Set de baldosas y damos al botón.
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-5.png" width="15%" alt=""></p>
-      <p class="texto">    
-        Le ponemos un nombre.
-      <br>
-         Escala 1 y seleccionar la imagen "Bricks.png" en el directorio donde esten los Sprites, Sonidos...
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-6.png" width="40%" alt=""></p>
-      <p class="img_centrada"><img src="img/actividad2/2-7.png" width="50%" alt=""></p>
+      <p class="img_centrada"><img src="img/actividad2/2-31.png" width="80%" alt=""></p>
 
-      <p class="texto">    
-         Una vez que tengamos el Fondo y la Baldosas ya podemos crear nuestro Escenario. Y colocamos la entidad Paddle.
-      </p>
-       <p class="img_centrada"><img src="img/actividad2/2-8.png" width="40%" alt=""></p>
-    
-       <p class="texto">    
-         Para poder crear los Bloques lo haremos desde el Evento "Created" del Escenario.
-         <br>
-         - Necesitamos varios Atributos (serán locales): Puntos, PosicionX, PosicionX Inicial, PosicionY y Repetir (todos son de tipo númerico)
-         <br>
-         - También tenemos que crear unos Atributos del juego: Esperar y Juego Terminado (ambos Booleanos inicializados a Falso), numero bloques, numero bloques 
-         eliminados, Vidas (de tipo númerico)
-         <br>
-         - Al comienzo del juego inicializar numero bloques, numero bloques eliminados y Puntos a 0. Y Vidas a 3.
-         <br>
-         - Los podemos crear de muchas maneras una de ellas es utilizando el repetir y mandando un Custom Event que es que crea el Bloque, inicializando
-         las variables de Puntos, Repetir, PosicionX, PosicionY, PosicionX Inicial (por cada fila) y sumando al numero de bloques los bloques que creamos.
-       </p>
-       <p class="img_centrada"><img src="img/actividad2/2-9.png" width="40%" alt=""></p>
 
-       <p class="texto">    
-         Recordar que tenemos que agregar la entidad de "Green Block" antes de poder hacer algo con ella.  Escala 1 y seleccionar la imagen "Green Block.png".
-       </p>
-       <p class="img_centrada"><img src="img/actividad2/2-10.png" width="40%" alt=""></p>
-       <p class="texto">    
-         Quedaría algo como esto:
-       </p>
-       <p class="img_centrada"><img src="img/actividad2/2-11.png" width="40%" alt=""></p>
- 
-       <p class="texto">    
-         Crearemos un grupo de Colision llamado "Bloques" que solo colisionara con el grupo de Colisión "Pelota" que lo tendrá asignado la pelota. Y se 
+
+
+
+
+         <br><br>
+         <br><br>
+         <br><br>
+         <br><br>
+         <br><br>
+         <br><br>
+
+        - Si Vidas es 0 o Juego Terminado es verdadero ponemos el "x-speed" a 0 para que no se mueva.
+        - Y si Vidas es mayor que 0 hacemos que se mueva.
+
+
+grupo de Colision llamado "Bloques" que solo colisionara con el grupo de Colisión "Pelota" que lo tendrá asignado la pelota. Y se 
          lo pondremos a la entidad "Green Block".
-       </p>
-       <p class="img_centrada"><img src="img/actividad2/2-12.png" width="60%" alt=""></p>
+
+
 
        <p class="texto">    
          Añadir un nuevo Evento en el Escenario de "Actor Created" para que cuando se elimine una entidad que pertenezca al Grupo de los Bloques se 
@@ -141,75 +252,37 @@
        </p>
        <p class="img_centrada"><img src="img/actividad2/2-13.png" width="60%" alt=""></p>
 
+
+
+
+
+
+      <p class="texto">
+         - También tenemos que crear unos Atributos del juego: Esperar y Juego Terminado (ambos Booleanos inicializados a Falso), numero bloques, numero bloques 
+         eliminados, Vidas (de tipo númerico)
+         - Al comienzo del juego inicializar numero bloques, numero bloques eliminados y Puntos a 0. Y Vidas a 3.
+       </p>
+
+
+
+
+
+    
+ 
+
        <p class="texto">    
          Y necesitamos otro Evento de Drawing para mostrar los Puntos y las Vidas pero con una fuente que creemos en Central del juego/Fuente.
        </p>
        <p class="img_centrada"><img src="img/actividad2/2-14.png" width="60%" alt=""></p>
 
-       <p class="nota">    
-         Faltaria hacer algo mñas en la entidad Geen Block pero lo veremos más adelante.
-      </p>
 
-      <h4>Paddle</h4>
-      <p class="texto">    
-         Para crear una entidad daremos al botón, le ponemos un nombre y daremos al botón de crear.
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-15.png" width="15%" alt=""></p>
-      <p class="img_centrada"><img src="img/actividad2/2-16.png" width="40%" alt=""></p>
 
-      <p class="texto">    
-        Nos aparece una ventana que nos dice que no tenemos animaciones, asi que le damos al botón para añadir una animación. 
-        <br>
-        Pulsamos el botón para añadir un fotograma.
-        <br>
-        Escala 1 y seleccionar la imagen "Paddle.png". Le cambiamos el nombre de la animación (Siempre sin acentos).
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-17.png" width="15%" alt=""></p>
-      <p class="img_centrada"><img src="img/actividad2/2-18.png" width="40%" alt=""></p>
 
-      <p class="texto">    
-        Ahora comenzaremos con la programación del Paddle.
-        <br>
-        Tendremos 2 Atributos del Juego (Globales), Vidas que será númerico y Juego Terminado que será un booleano (verdadero/falso).
-        <br><br>
-        Añadir un Evento Basics/When Updating para el movimiento.
-        <br>
-        - Si Vidas es 0 o Juego Terminado es verdadero ponemos el "x-speed" a 0 para que no se mueva.
-        <br>
-        - Y si Vidas es mayor que 0 hacemos que se mueva.
-        <br>
-        - Si le damos la tecla izquierda movemos x-speed en negativo.
-        <br>
-        - Si le damos la tecla derecha movemos x-speed en positivo.
-        <br>
-        - Y si no damos ni a la tecla derecha ni a la izquierda lo ponemos a 0 para que deje de moverse el Paddle.
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-19.png" width="70%" alt=""></p>
 
-      <p class="nota">
-         A la hora de poner bloques si no queremos ese bloque podemos arrastrarlo a la basura que esta arriba a la derecha ó podemos dar click derecho
-         (aparecerán más opciones para hacer más cosas interesantes).
-        </p>
 
-      <p class="texto">    
-        Añadir otro Evento Basics/When Updating para que el Paddle no sobrepase los lados.
-        <br>
-        - Si la posición X del Paddle es menor a la anchura del tile igualo su X a la anchura de la tile.
-        <br>
-        - Y si la posición X + su anchura es mayor que anchura de la escena menos la anchura del tile igual su X a anchura de la escena menos
-         la anchura del tile.
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-20.png" width="80%" alt=""></p>
 
-      <p class="texto">    
-        Pondremos su colisión.
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-21.png" width="15%" alt=""></p>
 
-      <p class="texto">    
-        En la Fisica. No se puede empujar y no podrá rotar.
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-22.png" width="40%" alt=""></p>
+
 
       <p class="texto">     
         Y pondremos que pertenezca al grupo de los Players. Que en Settings/Grupos de colisión los Players colisionaran con la "Tiles" y con un grupo que 
@@ -243,19 +316,10 @@
 
       <p class="texto">    
         Ahora vamos a programar la conducta "Lanzar Pelota". Damos al botón de "Editar Conducta".
-        <br>
-        - Tenemos que agregar la entidad de "Ball". Escala 1 y seleccionar la imagen "Ball.png"
-        <br>
-        - La pelota se lanzara con el botón del Espacio. Para ello necesito crear en Setting/Controles una nueva tecla.
-        <br>
-        - Crear un nuevo evento Input/Universal/Keyboard y seleccionamos el botón nuevo que hemos creado.
-        <br>
-        - Usaremos el atributo Vidas para poder lanzar una nueva pelota y otro atributo Esperar que sera booleano que hasta que la pelota anterior no halla
-        desaparecido de la escena no pueda volver a lanzar otra pelota.
-        <br>
-        - Deje otro bloque pero no está enganchado para que si quieren podríamos hacer que tuvieramos varias pelotas a la vez.
-      </p>
-      <p class="img_centrada"><img src="img/actividad2/2-31.png" width="80%" alt=""></p>
+
+
+
+
 
       <h4>Green Block</h4>
       <p class="texto">    
@@ -352,6 +416,14 @@
         <p class="img_centrada"><img src="img/actividad2/2-48.png" width="20%" alt=""></p>
         <p class="img_centrada"><img src="img/actividad2/2-49.png" width="20%" alt=""></p>
 
+
+
+       <h2>Retos</h2>
+       <p class="texto">
+         - Que se puedan tener más pelotas a la vez.
+         <br>
+         - Que cuando ya no tenga vidas que se vuelva a recargar la escena y vuelva a empezar el juego.
+       </p>
 
 
 
